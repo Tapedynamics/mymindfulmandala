@@ -808,11 +808,19 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
-.hero-background img {
+.hero-background img,
+.hero-background video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/* Ottimizzazione video performance */
+.hero-background video {
+    /* Migliora le performance su mobile */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .hero-overlay {
