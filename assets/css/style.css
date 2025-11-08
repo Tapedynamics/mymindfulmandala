@@ -6,56 +6,51 @@
 }
 
 :root {
-    /* Palette Gioiosa e Creativa */
-    --primary-blue: #4A90E2;
-    --light-blue: #6BB6FF;
-    --ocean-blue: #2E5F8A;
-    --sky-blue: #87CEEB;
+    /* Palette Elegante e Sofisticata */
+    --primary: #2C5F4D;
+    --primary-light: #4A7C6A;
+    --primary-dark: #1F4437;
 
-    /* Nuovi Colori Vivaci */
-    --sunset-pink: #FF6B9D;
-    --coral: #FF8B94;
-    --lavender: #C3B1E1;
-    --mint: #98D8C8;
-    --sunshine: #FFD93D;
-    --peach: #FFAAA5;
-    --teal: #6BCF9F;
-    --violet: #A29BFE;
-    --rose-gold: #E8B4B8;
+    /* Colori Secondari Eleganti */
+    --secondary: #B89968;
+    --secondary-light: #C9AA7F;
+    --accent: #8B7355;
+    --accent-light: #A38B73;
 
-    /* Neutrali luminosi */
-    --cream: #FFF9F0;
+    /* Neutrali Sofisticati */
+    --cream: #FAF9F6;
     --white: #FFFFFF;
-    --beige: #F7EDE2;
-    --soft-pink: #FFF0F5;
+    --beige: #E8E3DA;
+    --light-grey: #F5F5F5;
+    --soft-beige: #F9F6F2;
 
     /* Testi */
-    --text-dark: #2C3E50;
+    --text-dark: #1A1A1A;
+    --text-medium: #2C2C2C;
     --text-light: #6B7280;
-    --text-purple: #6C5CE7;
+    --text-lighter: #9CA3AF;
 
-    /* Accenti */
-    --gold: #FFD700;
-    --rainbow-start: #FF6B9D;
-    --rainbow-end: #6BCF9F;
+    /* Accenti Premium */
+    --gold: #B89968;
+    --bronze: #8B7355;
 
-    /* Shadows colorate */
-    --shadow: rgba(255, 107, 157, 0.15);
-    --shadow-hover: rgba(255, 107, 157, 0.3);
-    --shadow-purple: rgba(162, 155, 254, 0.2);
-    --shadow-teal: rgba(107, 207, 159, 0.2);
+    /* Shadows Neutre */
+    --shadow: rgba(44, 95, 77, 0.08);
+    --shadow-md: rgba(44, 95, 77, 0.12);
+    --shadow-lg: rgba(44, 95, 77, 0.15);
+    --shadow-hover: rgba(44, 95, 77, 0.18);
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
-    background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 100%);
+    background: var(--cream);
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
 }
 
-/* Pattern di sfondo gioioso */
+/* Pattern di sfondo elegante */
 body::before {
     content: '';
     position: fixed;
@@ -64,9 +59,8 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(162, 155, 254, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(107, 207, 159, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(44, 95, 77, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(184, 153, 104, 0.02) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -84,15 +78,14 @@ h1, h2, h3, h4 {
 
 /* === HEADER === */
 .header {
-    background: linear-gradient(135deg, var(--white) 0%, var(--soft-pink) 50%, var(--cream) 100%);
+    background: var(--white);
     padding: 1.5rem 0;
-    box-shadow: 0 4px 20px var(--shadow);
+    box-shadow: 0 2px 8px var(--shadow);
     position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(10px);
-    border-bottom: 3px solid transparent;
-    border-image: linear-gradient(90deg, var(--sunset-pink), var(--lavender), var(--mint), var(--sunshine)) 1;
+    border-bottom: 1px solid var(--beige);
 }
 
 .header .container {
@@ -103,22 +96,18 @@ h1, h2, h3, h4 {
 
 .logo h1 {
     font-size: 1.8rem;
-    background: linear-gradient(135deg, var(--sunset-pink), var(--lavender), var(--teal));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
     margin-bottom: 0.2rem;
     font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 .tagline {
     font-size: 0.9rem;
-    background: linear-gradient(90deg, var(--violet), var(--mint));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent);
     font-style: italic;
     font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .logo a {
@@ -148,12 +137,12 @@ h1, h2, h3, h4 {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-blue);
+    background: var(--primary);
     transition: width 0.3s ease;
 }
 
 .nav a:hover {
-    color: var(--primary-blue);
+    color: var(--primary);
 }
 
 .nav a:hover::after {
@@ -161,10 +150,10 @@ h1, h2, h3, h4 {
 }
 
 .cart-btn {
-    background: linear-gradient(135deg, var(--sunset-pink), var(--coral));
+    background: var(--primary);
     border: none;
     padding: 0.6rem 1rem;
-    border-radius: 25px;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -172,18 +161,18 @@ h1, h2, h3, h4 {
     color: var(--white);
     transition: all 0.3s ease;
     position: relative;
-    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .cart-btn:hover {
-    background: linear-gradient(135deg, var(--coral), var(--sunset-pink));
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-hover);
 }
 
 .cart-count {
-    background: linear-gradient(135deg, var(--sunshine), var(--gold));
-    color: var(--text-dark);
+    background: var(--secondary);
+    color: var(--white);
     border-radius: 50%;
     width: 22px;
     height: 22px;
@@ -192,12 +181,11 @@ h1, h2, h3, h4 {
     justify-content: center;
     font-size: 0.75rem;
     font-weight: 700;
-    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: 0.95; }
 }
 
 /* === HERO SECTION === */
@@ -365,8 +353,8 @@ h1, h2, h3, h4 {
     right: 0;
     bottom: 0;
     border-radius: 20px;
-    padding: 3px;
-    background: linear-gradient(135deg, var(--sunset-pink), var(--lavender), var(--mint), var(--sunshine));
+    padding: 2px;
+    background: var(--primary);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -375,7 +363,7 @@ h1, h2, h3, h4 {
 }
 
 .product-card:hover::after {
-    opacity: 1;
+    opacity: 0.3;
 }
 
 @keyframes fadeIn {
@@ -388,8 +376,8 @@ h1, h2, h3, h4 {
 }
 
 .product-card:hover {
-    transform: translateY(-15px) rotate(-1deg);
-    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px var(--shadow-hover);
 }
 
 .product-image {
@@ -406,28 +394,27 @@ h1, h2, h3, h4 {
 }
 
 .product-card:hover .product-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .product-badge {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: linear-gradient(135deg, var(--sunshine), var(--gold));
-    color: var(--text-dark);
+    background: var(--secondary);
+    color: var(--white);
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 700;
     z-index: 2;
-    box-shadow: 0 4px 15px rgba(255, 217, 61, 0.5);
-    animation: wiggle 3s ease-in-out infinite;
+    box-shadow: 0 2px 8px var(--shadow);
+    letter-spacing: 0.5px;
 }
 
 @keyframes wiggle {
     0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-5deg); }
-    75% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
 }
 
 .product-info {
@@ -456,42 +443,35 @@ h1, h2, h3, h4 {
 .product-price {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary-blue);
+    color: var(--primary);
 }
 
 .add-to-cart-btn {
-    background: linear-gradient(135deg, var(--sunset-pink), var(--coral));
+    background: var(--primary);
     color: var(--white);
     border: none;
     padding: 0.8rem 1.8rem;
-    border-radius: 30px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: 700;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
-    position: relative;
-    overflow: hidden;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow);
+    letter-spacing: 0.3px;
 }
 
 .add-to-cart-btn::before {
-    content: '🛒';
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    transition: left 0.3s ease;
+    content: '';
+    display: none;
 }
 
 .add-to-cart-btn:hover::before {
-    left: 10px;
+    display: none;
 }
 
 .add-to-cart-btn:hover {
-    background: linear-gradient(135deg, var(--coral), var(--sunset-pink));
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
-    padding-left: 2.5rem;
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-hover);
 }
 
 /* === CONTACT SECTION === */
@@ -830,28 +810,21 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg,
-        rgba(255, 107, 157, 0.85) 0%,
-        rgba(195, 177, 225, 0.85) 35%,
-        rgba(107, 207, 159, 0.85) 70%,
-        rgba(255, 217, 61, 0.8) 100%);
+        rgba(44, 95, 77, 0.75) 0%,
+        rgba(31, 68, 55, 0.8) 100%);
     z-index: 2;
-    animation: gradientShift 15s ease infinite;
 }
 
 @keyframes gradientShift {
     0%, 100% {
         background: linear-gradient(135deg,
-            rgba(255, 107, 157, 0.85) 0%,
-            rgba(195, 177, 225, 0.85) 35%,
-            rgba(107, 207, 159, 0.85) 70%,
-            rgba(255, 217, 61, 0.8) 100%);
+            rgba(44, 95, 77, 0.75) 0%,
+            rgba(31, 68, 55, 0.8) 100%);
     }
     50% {
         background: linear-gradient(135deg,
-            rgba(107, 207, 159, 0.85) 0%,
-            rgba(255, 217, 61, 0.8) 35%,
-            rgba(255, 107, 157, 0.85) 70%,
-            rgba(195, 177, 225, 0.85) 100%);
+            rgba(31, 68, 55, 0.8) 0%,
+            rgba(44, 95, 77, 0.75) 100%);
     }
 }
 
@@ -938,29 +911,29 @@ h1, h2, h3, h4 {
 }
 
 .cta-btn.primary {
-    background: linear-gradient(135deg, var(--sunshine), var(--peach));
-    color: var(--text-dark);
+    background: var(--secondary);
+    color: var(--white);
     font-weight: 700;
 }
 
 .cta-btn.primary:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(255, 217, 61, 0.5);
-    background: linear-gradient(135deg, var(--gold), var(--sunshine));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-hover);
+    background: var(--secondary-light);
 }
 
 .cta-btn.secondary {
     background: transparent;
     color: var(--white);
-    border: 3px solid var(--white);
+    border: 2px solid var(--white);
     font-weight: 700;
 }
 
 .cta-btn.secondary:hover {
     background: var(--white);
-    color: var(--sunset-pink);
-    transform: translateY(-5px) rotate(2deg);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
 .cta-btn.instagram {
@@ -1003,31 +976,21 @@ h1, h2, h3, h4 {
 
 /* === SOCIAL PROOF BANNER === */
 .social-proof-banner {
-    background: linear-gradient(135deg, var(--white) 0%, var(--soft-pink) 50%, var(--white) 100%);
+    background: var(--light-grey);
     padding: 3rem 0;
-    box-shadow: 0 5px 20px var(--shadow);
+    box-shadow: 0 2px 12px var(--shadow);
     position: relative;
     overflow: hidden;
 }
 
 .social-proof-banner::before {
-    content: '✨';
-    position: absolute;
-    font-size: 4rem;
-    opacity: 0.1;
-    top: 10%;
-    left: 5%;
-    animation: float 6s ease-in-out infinite;
+    content: '';
+    display: none;
 }
 
 .social-proof-banner::after {
-    content: '💫';
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.1;
-    bottom: 10%;
-    right: 5%;
-    animation: float 5s ease-in-out infinite reverse;
+    content: '';
+    display: none;
 }
 
 .proof-items {
@@ -1044,30 +1007,17 @@ h1, h2, h3, h4 {
 .proof-number {
     font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--sunset-pink), var(--lavender), var(--teal));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
     margin-bottom: 0.5rem;
     font-family: 'Cormorant Garamond', serif;
-    animation: colorShift 5s ease infinite;
 }
 
 @keyframes colorShift {
     0%, 100% {
-        background: linear-gradient(135deg, var(--sunset-pink), var(--lavender), var(--teal));
-        -webkit-background-clip: text;
-        background-clip: text;
+        color: var(--primary);
     }
-    33% {
-        background: linear-gradient(135deg, var(--teal), var(--sunshine), var(--sunset-pink));
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-    66% {
-        background: linear-gradient(135deg, var(--lavender), var(--mint), var(--coral));
-        -webkit-background-clip: text;
-        background-clip: text;
+    50% {
+        color: var(--primary-light);
     }
 }
 
@@ -1407,25 +1357,15 @@ h1, h2, h3, h4 {
 /* === NEWSLETTER === */
 .newsletter {
     padding: 5rem 0;
-    background: linear-gradient(135deg,
-        var(--sunset-pink) 0%,
-        var(--lavender) 35%,
-        var(--mint) 70%,
-        var(--sunshine) 100%);
+    background: var(--primary);
     color: var(--white);
     position: relative;
     overflow: hidden;
 }
 
 .newsletter::before {
-    content: '💌';
-    position: absolute;
-    font-size: 10rem;
-    opacity: 0.1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: float 8s ease-in-out infinite;
+    content: '';
+    display: none;
 }
 
 .newsletter-content {
@@ -1472,10 +1412,7 @@ h1, h2, h3, h4 {
 
 /* === FOOTER EXTENDED === */
 .footer {
-    background: linear-gradient(135deg,
-        var(--ocean-blue) 0%,
-        var(--violet) 50%,
-        var(--sunset-pink) 100%);
+    background: var(--text-dark);
     color: var(--white);
     padding: 4rem 0 2rem;
     position: relative;
@@ -1483,13 +1420,8 @@ h1, h2, h3, h4 {
 }
 
 .footer::before {
-    content: '🌈';
-    position: absolute;
-    font-size: 15rem;
-    opacity: 0.05;
-    bottom: -50px;
-    right: -50px;
-    animation: float 10s ease-in-out infinite;
+    content: '';
+    display: none;
 }
 
 .footer-grid {
@@ -1582,7 +1514,7 @@ h1, h2, h3, h4 {
 
 /* === ABOUT PAGE === */
 .about-hero, .contact-hero, .blog-hero {
-    background: linear-gradient(135deg, var(--lavender) 0%, var(--mint) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     padding: 5rem 0;
     text-align: center;
     color: var(--white);
@@ -1591,13 +1523,8 @@ h1, h2, h3, h4 {
 }
 
 .about-hero::before {
-    content: '✨';
-    position: absolute;
-    font-size: 8rem;
-    opacity: 0.15;
-    top: 20%;
-    left: 10%;
-    animation: float 6s ease-in-out infinite;
+    content: '';
+    display: none;
 }
 
 .about-main {
@@ -2324,11 +2251,7 @@ h1, h2, h3, h4 {
 
 /* === SHOP PAGE === */
 .shop-hero {
-    background: linear-gradient(135deg,
-        var(--sunset-pink) 0%,
-        var(--lavender) 35%,
-        var(--mint) 70%,
-        var(--sunshine) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     padding: 5rem 0;
     text-align: center;
     color: var(--white);
@@ -2343,9 +2266,8 @@ h1, h2, h3, h4 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
-    animation: shimmer 8s ease-in-out infinite;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    opacity: 0.3;
 }
 
 .shop-hero .container {
@@ -2438,18 +2360,18 @@ h1, h2, h3, h4 {
 }
 
 .filter-btn:hover {
-    background: linear-gradient(135deg, var(--sunset-pink), var(--lavender));
+    background: var(--primary);
     color: var(--white);
-    border-color: transparent;
+    border-color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+    box-shadow: 0 3px 10px var(--shadow-hover);
 }
 
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--sunset-pink), var(--lavender));
+    background: var(--primary);
     color: var(--white);
-    border-color: transparent;
-    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+    border-color: var(--primary);
+    box-shadow: 0 3px 10px var(--shadow-hover);
 }
 
 .sort-dropdown {
