@@ -2333,15 +2333,13 @@ h1, h2, h3, h4 {
 }
 
 .shop-filters {
-    background: linear-gradient(to right,
-        rgba(255, 107, 157, 0.05),
-        rgba(195, 177, 225, 0.05),
-        rgba(152, 216, 200, 0.05));
+    background: var(--white);
     padding: 2rem 0;
-    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.1);
+    box-shadow: 0 2px 12px var(--shadow);
     position: sticky;
-    top: 80px;
+    top: 0;
     z-index: 90;
+    border-bottom: 1px solid var(--beige);
     backdrop-filter: blur(10px);
 }
 
