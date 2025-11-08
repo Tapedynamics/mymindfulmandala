@@ -6,51 +6,51 @@
 }
 
 :root {
-    /* Palette Elegante e Sofisticata */
-    --primary: #2C5F4D;
-    --primary-light: #4A7C6A;
-    --primary-dark: #1F4437;
+    /* Palette dal Logo "My Mindful Mandala" */
+    --primary: #D4A574;        /* Oro Champagne - mandala logo */
+    --primary-light: #E5C9A3;  /* Oro chiaro */
+    --primary-dark: #B8865A;   /* Oro scuro */
 
-    /* Colori Secondari Eleganti */
-    --secondary: #B89968;
-    --secondary-light: #C9AA7F;
-    --accent: #8B7355;
-    --accent-light: #A38B73;
+    /* Colori Secondari dal Logo */
+    --secondary: #C9B9A5;      /* Beige Taupe - sfondo logo */
+    --secondary-light: #DBD0C1;/* Beige chiaro */
+    --accent: #A68B65;         /* Bronzo dorato */
+    --accent-light: #BDA485;   /* Bronzo chiaro */
 
-    /* Neutrali Sofisticati */
-    --cream: #FAF9F6;
+    /* Neutrali dal Logo */
+    --cream: #F5EFE7;          /* Crema/Avorio - centro logo */
     --white: #FFFFFF;
-    --beige: #E8E3DA;
-    --light-grey: #F5F5F5;
-    --soft-beige: #F9F6F2;
+    --beige: #E8DED0;          /* Beige caldo */
+    --light-grey: #F0EBE3;     /* Grigio caldo */
+    --soft-beige: #EDE5DB;     /* Beige soft */
 
-    /* Testi */
-    --text-dark: #1A1A1A;
+    /* Testi dal Logo */
+    --text-dark: #1A1A1A;      /* Nero logo */
     --text-medium: #2C2C2C;
-    --text-light: #6B7280;
-    --text-lighter: #9CA3AF;
+    --text-light: #6B6B6B;
+    --text-lighter: #9B9B9B;
 
     /* Accenti Premium */
-    --gold: #B89968;
-    --bronze: #8B7355;
+    --gold: #D4A574;           /* Oro champagne */
+    --bronze: #A68B65;         /* Bronzo */
 
-    /* Shadows Neutre */
-    --shadow: rgba(44, 95, 77, 0.08);
-    --shadow-md: rgba(44, 95, 77, 0.12);
-    --shadow-lg: rgba(44, 95, 77, 0.15);
-    --shadow-hover: rgba(44, 95, 77, 0.18);
+    /* Shadows Calde */
+    --shadow: rgba(212, 165, 116, 0.12);
+    --shadow-md: rgba(212, 165, 116, 0.16);
+    --shadow-lg: rgba(212, 165, 116, 0.20);
+    --shadow-hover: rgba(212, 165, 116, 0.24);
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
-    background: var(--cream);
+    background: radial-gradient(ellipse at center, var(--cream) 0%, var(--beige) 100%);
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
 }
 
-/* Pattern di sfondo elegante */
+/* Pattern di sfondo elegante - stile logo */
 body::before {
     content: '';
     position: fixed;
@@ -59,8 +59,8 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(44, 95, 77, 0.02) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(184, 153, 104, 0.02) 0%, transparent 50%);
+        radial-gradient(circle at 30% 40%, rgba(212, 165, 116, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(201, 185, 165, 0.03) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -92,6 +92,17 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .logo h1 {
@@ -810,21 +821,24 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg,
-        rgba(44, 95, 77, 0.75) 0%,
-        rgba(31, 68, 55, 0.8) 100%);
+        rgba(212, 165, 116, 0.70) 0%,
+        rgba(184, 134, 90, 0.75) 50%,
+        rgba(166, 139, 101, 0.80) 100%);
     z-index: 2;
 }
 
 @keyframes gradientShift {
     0%, 100% {
         background: linear-gradient(135deg,
-            rgba(44, 95, 77, 0.75) 0%,
-            rgba(31, 68, 55, 0.8) 100%);
+            rgba(212, 165, 116, 0.70) 0%,
+            rgba(184, 134, 90, 0.75) 50%,
+            rgba(166, 139, 101, 0.80) 100%);
     }
     50% {
         background: linear-gradient(135deg,
-            rgba(31, 68, 55, 0.8) 0%,
-            rgba(44, 95, 77, 0.75) 100%);
+            rgba(166, 139, 101, 0.80) 0%,
+            rgba(184, 134, 90, 0.75) 50%,
+            rgba(212, 165, 116, 0.70) 100%);
     }
 }
 
@@ -1099,22 +1113,21 @@ h1, h2, h3, h4 {
 }
 
 .usp-icon {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    filter: drop-shadow(0 5px 10px rgba(255, 107, 157, 0.3));
-    animation: bounce 2s ease-in-out infinite;
+    color: var(--gold);
+    filter: drop-shadow(0 3px 8px rgba(212, 165, 116, 0.3));
+    transition: all 0.3s ease;
 }
 
 .usp-card:hover .usp-icon {
-    transform: scale(1.2) rotate(10deg);
+    transform: scale(1.1);
+    color: var(--primary-dark);
 }
 
 .usp-card h3 {
     font-size: 1.6rem;
-    background: linear-gradient(135deg, var(--sunset-pink), var(--violet));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-dark);
     margin-bottom: 1rem;
     font-weight: 600;
 }

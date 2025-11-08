@@ -11,7 +11,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(for file in *.html)",
+      "Bash(do sed -i 's/✨//g; s/🧘‍♀️//g; s/🎨//g; s/💫//g; s/🌈//g; s/💖//g; s/🏠//g; s/🤍//g; s/💙//g; s/📚//g; s/💎//g; s/💰//g; s/🆕//g; s/🔍//g; s/🎂//g; s/🌟//g; s/🌸//g' \"$file\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
