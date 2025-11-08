@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mindful Mandala - Handmade Mandalas & Art</title>
+    <meta name="description" content="Handmade mandalas created with mindfulness. Unique wall decorations and personalized cake toppers.">
+
+    <!-- Language Detection & Redirect Script -->
+    <script>
+        // Detect browser language
+        const userLang = navigator.language || navigator.userLanguage;
+
+        // Redirect to appropriate language version
+        if (userLang.startsWith('it')) {
+            window.location.href = './it/index.html';
+        } else {
+            window.location.href = './en/index.html';
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4A90E2 0%, #2E5F8A 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .loader {
+            max-width: 500px;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .manual-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .manual-links a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .manual-links a:hover {
+            background: white;
+            color: #4A90E2;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <h1>My Mindful Mandala</h1>
+        <p>Redirecting to your language / Reindirizzamento alla tua lingua...</p>
+        <div class="spinner"></div>
+
+        <div class="manual-links">
+            <a href="./it/index.html">Italiano 🇮🇹</a>
+            <a href="./en/index.html">English 🇬🇧</a>
+        </div>
+
+        <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.9;">
+            Arte che respira | Art that breathes
+        </p>
+    </div>
+</body>
+</html>

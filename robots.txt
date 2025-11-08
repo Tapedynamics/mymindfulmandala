@@ -1,0 +1,25 @@
+# robots.txt for My Mindful Mandala
+# https://www.mymindfulmandala.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.mymindfulmandala.com/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow specific directories if needed
+# Disallow: /admin/
+# Disallow: /private/

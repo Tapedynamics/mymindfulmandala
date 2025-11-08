@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Meta Tags Base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Shop - Mandala Dipinti a Mano | My Mindful Mandala</title>
+    <meta name="description" content="Acquista mandala dipinti a mano, decorazioni murali uniche e cake topper personalizzati. Ogni pezzo è unico e creato con mindfulness.">
+    <meta name="keywords" content="acquista mandala, mandala blu, decorazioni parete, cake topper, arte personalizzata">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shop - My Mindful Mandala">
+    <meta property="og:description" content="Scopri la collezione completa di mandala dipinti a mano e decorazioni personalizzate">
+    <meta property="og:image" content="../assets/images/535020455_1564998554814458_4046275151140478376_n.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>My Mindful Mandala</h1>
+                    <p class="tagline">Arte che respira</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="chi-siamo.html">Chi Sono</a>
+                <a href="blog.html">Blog</a>
+                <a href="contatti.html">Contatti</a>
+                <div class="language-switcher">
+                    <a href="../en/shop.html" class="lang-btn">EN</a>
+                    <span class="lang-separator">|</span>
+                    <a href="../it/shop.html" class="lang-btn active">IT</a>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1 class="page-title">La Collezione Completa</h1>
+            <p class="page-subtitle">Ogni mandala è un'opera unica, dipinta a mano con dedizione e mindfulness</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="shop-filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="tutti">Tutti i Prodotti</button>
+                    <button class="filter-btn" data-filter="mandala-blu">Mandala Dipinti Blu</button>
+                    <button class="filter-btn" data-filter="mandala-decorativi">Mandala Decorativi</button>
+                    <button class="filter-btn" data-filter="cake-topper">Cake Topper</button>
+                </div>
+                <div class="sort-dropdown">
+                    <select id="sortSelect">
+                        <option value="featured">In Evidenza</option>
+                        <option value="price-asc">Prezzo: Basso → Alto</option>
+                        <option value="price-desc">Prezzo: Alto → Basso</option>
+                        <option value="newest">Più Recenti</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="products-grid">
+
+                <!-- Product 1 - Mandala Blu Lifestyle -->
+                <div class="product-card" data-category="mandala-blu" data-price="75">
+                    <div class="product-badge">Più Amato</div>
+                    <div class="product-image">
+                        <img src="../assets/images/535020455_1564998554814458_4046275151140478376_n.jpg" alt="Mandala Blu Oceano Doppio">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Set Mandala Blu Oceano</h3>
+                        <p class="product-description">Due meravigliosi mandala dipinti con sfumature blu oceano. Perfetti insieme o separati.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€75.00</span>
+                            <button class="add-to-cart-btn" data-id="1" data-name="Set Mandala Blu Oceano" data-price="75.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Mandala Singolo Blu -->
+                <div class="product-card" data-category="mandala-blu" data-price="65">
+                    <div class="product-image">
+                        <img src="../assets/images/534528649_1564998528147794_5630696815751371550_n.jpg" alt="Mandala Blu Intenso">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Blu Intenso</h3>
+                        <p class="product-description">Mandala dipinto a mano con motivi geometrici intricati, tonalità blu profondo.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€65.00</span>
+                            <button class="add-to-cart-btn" data-id="2" data-name="Mandala Blu Intenso" data-price="65.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 - Mandala Decorativo Bianco Principale -->
+                <div class="product-card featured" data-category="mandala-decorativi" data-price="95">
+                    <div class="product-badge new">Nuovo</div>
+                    <div class="product-image">
+                        <img src="../assets/images/556671163_1606361624011484_5064783444891614285_n.jpg" alt="Mandala Elegance Perle">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Elegance Perle</h3>
+                        <p class="product-description">Design esclusivo in rilievo con perle decorative. Pezzo da collezione.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€95.00</span>
+                            <button class="add-to-cart-btn" data-id="3" data-name="Mandala Elegance Perle" data-price="95.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Mandala Bianco Close-up -->
+                <div class="product-card" data-category="mandala-decorativi" data-price="85">
+                    <div class="product-image">
+                        <img src="../assets/images/557536094_1606361704011476_3164022460625057540_n.jpg" alt="Mandala Bianco Dettagli">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Bianco Raffinato</h3>
+                        <p class="product-description">Mandala decorativo bianco con dettagli in rilievo incredibili.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€85.00</span>
+                            <button class="add-to-cart-btn" data-id="4" data-name="Mandala Bianco Raffinato" data-price="85.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 - Mandala Bianco 3 -->
+                <div class="product-card" data-category="mandala-decorativi" data-price="80">
+                    <div class="product-image">
+                        <img src="../assets/images/557631006_1606361667344813_1966585610545802995_n.jpg" alt="Mandala Bianco Classico">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Bianco Classico</h3>
+                        <p class="product-description">Design classico con motivi floreali, perfetto per ogni ambiente.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€80.00</span>
+                            <button class="add-to-cart-btn" data-id="5" data-name="Mandala Bianco Classico" data-price="80.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 - Mandala Bianco 4 -->
+                <div class="product-card" data-category="mandala-decorativi" data-price="80">
+                    <div class="product-image">
+                        <img src="../assets/images/557633458_1606361747344805_7404752077798300670_n.jpg" alt="Mandala Bianco Serenità">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Bianco Serenità</h3>
+                        <p class="product-description">Motivi delicati che ispirano pace e tranquillità.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€80.00</span>
+                            <button class="add-to-cart-btn" data-id="6" data-name="Mandala Bianco Serenità" data-price="80.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 - Mandala Bianco 5 -->
+                <div class="product-card" data-category="mandala-decorativi" data-price="80">
+                    <div class="product-image">
+                        <img src="../assets/images/558319803_1606361574011489_739454102492580925_n.jpg" alt="Mandala Bianco Armonia">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Bianco Armonia</h3>
+                        <p class="product-description">Design armonioso con simmetria perfetta.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€80.00</span>
+                            <button class="add-to-cart-btn" data-id="7" data-name="Mandala Bianco Armonia" data-price="80.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 - Cake Topper Moana -->
+                <div class="product-card" data-category="cake-topper" data-price="55">
+                    <div class="product-badge">Personalizzato</div>
+                    <div class="product-image">
+                        <img src="../assets/images/301966524_766538434660478_667149526915953838_n.jpg" alt="Cake Topper Moana">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cake Topper Tema Disney</h3>
+                        <p class="product-description">Cake topper personalizzato a tema Moana. Possiamo creare il tuo personaggio preferito!</p>
+                        <div class="product-footer">
+                            <span class="product-price">Da €55.00</span>
+                            <button class="add-to-cart-btn" data-id="8" data-name="Cake Topper Tema Disney" data-price="55.00">Richiedi Info</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 - Cake Topper Generico -->
+                <div class="product-card" data-category="cake-topper" data-price="45">
+                    <div class="product-image">
+                        <img src="../assets/images/535389367_1566782101302770_1963232321171708031_n.jpg" alt="Cake Topper Personalizzato">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cake Topper Personalizzato</h3>
+                        <p class="product-description">Crea il tuo cake topper unico per rendere speciale ogni celebrazione.</p>
+                        <div class="product-footer">
+                            <span class="product-price">Da €45.00</span>
+                            <button class="add-to-cart-btn" data-id="9" data-name="Cake Topper Personalizzato" data-price="45.00">Richiedi Info</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10-15: Altri mandala using remaining images -->
+                <div class="product-card" data-category="mandala-blu" data-price="70">
+                    <div class="product-image">
+                        <img src="../assets/images/532404298_1565025771478403_4001328892751902098_n.jpg" alt="Mandala Blu Geometrico">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Blu Geometrico</h3>
+                        <p class="product-description">Forme geometriche perfette in tonalità blu vibranti.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€70.00</span>
+                            <button class="add-to-cart-btn" data-id="10" data-name="Mandala Blu Geometrico" data-price="70.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mandala-blu" data-price="72">
+                    <div class="product-image">
+                        <img src="../assets/images/533127168_1564200751560905_7552865575711570855_n.jpg" alt="Mandala Blu Celeste">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Blu Celeste</h3>
+                        <p class="product-description">Sfumature celesti che ricordano il cielo sereno.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€72.00</span>
+                            <button class="add-to-cart-btn" data-id="11" data-name="Mandala Blu Celeste" data-price="72.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mandala-blu" data-price="68">
+                    <div class="product-image">
+                        <img src="../assets/images/534653197_1564203154893998_5455248023855376740_n.jpg" alt="Mandala Blu Intensità">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Blu Intensità</h3>
+                        <p class="product-description">Colori intensi e vibranti per un impatto visivo forte.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€68.00</span>
+                            <button class="add-to-cart-btn" data-id="12" data-name="Mandala Blu Intensità" data-price="68.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mandala-blu" data-price="70">
+                    <div class="product-image">
+                        <img src="../assets/images/535238768_1564998468147800_4803509129245774349_n.jpg" alt="Mandala Blu Profondo">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Blu Profondo</h3>
+                        <p class="product-description">Tonalità profonde che evocano meditazione e introspezione.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€70.00</span>
+                            <button class="add-to-cart-btn" data-id="13" data-name="Mandala Blu Profondo" data-price="70.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mandala-blu" data-price="69">
+                    <div class="product-image">
+                        <img src="../assets/images/535382489_1564998481481132_3840666811296242725_n.jpg" alt="Mandala Blu Energia">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Blu Energia</h3>
+                        <p class="product-description">Energia positiva in ogni pennellata, colori vivaci.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€69.00</span>
+                            <button class="add-to-cart-btn" data-id="14" data-name="Mandala Blu Energia" data-price="69.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mandala-decorativi" data-price="50">
+                    <div class="product-image">
+                        <img src="../assets/images/122989176_4018694491478674_6606319377866772144_n.jpg" alt="Mandala Decorativo Speciale">
+                        <div class="product-overlay">
+                            <button class="quick-view">Vedi Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mandala Decorativo Speciale</h3>
+                        <p class="product-description">Design unico che combina tradizione e modernità.</p>
+                        <div class="product-footer">
+                            <span class="product-price">€50.00</span>
+                            <button class="add-to-cart-btn" data-id="15" data-name="Mandala Decorativo Speciale" data-price="50.00">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order CTA -->
+    <section class="custom-order-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Non Trovi Quello Che Cerchi?</h2>
+                <p>Posso creare un mandala completamente personalizzato per te! Scegli colori, dimensioni e design.</p>
+                <a href="contatti.html" class="cta-btn primary">Richiedi un Preventivo Personalizzato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>My Mindful Mandala</h3>
+                    <p>Arte che respira. Mandala dipinti a mano con mindfulness e dedizione.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Sweetmamacreations" target="_blank" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/my_mindful_mandala" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Rapidi</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="chi-siamo.html">Chi Sono</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informazioni</h4>
+                    <ul>
+                        <li><a href="#">Spedizioni</a></li>
+                        <li><a href="#">Resi e Rimborsi</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Termini e Condizioni</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <ul class="contact-info">
+                        <li>Email: <a href="mailto:Terry.cafagno@gmail.com">Terry.cafagno@gmail.com</a></li>
+                        <li>Orari: Lun-Ven 9:00-18:00</li>
+                        <li>Spedizione in tutta Italia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 My Mindful Mandala - Tutti i diritti riservati</p>
+                <p class="footer-quote">"Trova la calma, un respiro alla volta"</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Il Tuo Carrello</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Il carrello è vuoto</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Totale:</span>
+                <span id="cartTotal">€0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Procedi all'Acquisto</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

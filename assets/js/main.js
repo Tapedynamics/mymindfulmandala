@@ -1,0 +1,258 @@
+// === CART FUNCTIONALITY ===
+let cart = [];
+
+// DOM Elements
+const cartBtn = document.getElementById('cartBtn');
+const cartSidebar = document.getElementById('cartSidebar');
+const cartOverlay = document.getElementById('cartOverlay');
+const closeCart = document.getElementById('closeCart');
+const cartItems = document.getElementById('cartItems');
+const cartCount = document.getElementById('cartCount');
+const cartTotal = document.getElementById('cartTotal');
+const checkoutBtn = document.getElementById('checkoutBtn');
+const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+
+// Open Cart
+function openCart() {
+    cartSidebar.classList.add('active');
+    cartOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close Cart
+function closeCartSidebar() {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Update Cart Display
+function updateCart() {
+    // Update count
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+
+    // Update total
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    cartTotal.textContent = `€${total.toFixed(2)}`;
+
+    // Update cart items display
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Il carrello è vuoto</p>';
+        return;
+    }
+
+    cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <div class="cart-item-info">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-price">€${item.price.toFixed(2)}</div>
+                <div class="cart-item-quantity">
+                    <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                </div>
+            </div>
+            <button class="remove-item" onclick="removeFromCart(${item.id})">&times;</button>
+        </div>
+    `).join('');
+}
+
+// Add to Cart
+function addToCart(id, name, price) {
+    const existingItem = cart.find(item => item.id === id);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id: id,
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+    openCart();
+
+    // Show animation feedback
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = 'Aggiunto!';
+    btn.style.background = '#27AE60';
+
+    setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+    }, 1000);
+}
+
+// Remove from Cart
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCart();
+}
+
+// Update Quantity
+function updateQuantity(id, change) {
+    const item = cart.find(item => item.id === id);
+
+    if (item) {
+        item.quantity += change;
+
+        if (item.quantity <= 0) {
+            removeFromCart(id);
+        } else {
+            updateCart();
+        }
+    }
+}
+
+// Checkout
+function checkout() {
+    if (cart.length === 0) {
+        alert('Il carrello è vuoto!');
+        return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const itemsList = cart.map(item => `${item.name} (x${item.quantity})`).join(', ');
+
+    alert(`Grazie per il tuo ordine!\n\nProdotti: ${itemsList}\nTotale: €${total.toFixed(2)}\n\nRiceverai una email di conferma a breve.`);
+
+    cart = [];
+    updateCart();
+    closeCartSidebar();
+}
+
+// Event Listeners
+cartBtn.addEventListener('click', openCart);
+closeCart.addEventListener('click', closeCartSidebar);
+cartOverlay.addEventListener('click', closeCartSidebar);
+checkoutBtn.addEventListener('click', checkout);
+
+addToCartBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const id = parseInt(this.getAttribute('data-id'));
+        const name = this.getAttribute('data-name');
+        const price = parseFloat(this.getAttribute('data-price'));
+        addToCart(id, name, price);
+    });
+});
+
+// === PRODUCT FILTERS ===
+const filterBtns = document.querySelectorAll('.filter-btn');
+const productCards = document.querySelectorAll('.product-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+
+        // Filter products
+        productCards.forEach(card => {
+            if (filter === 'tutti' || card.getAttribute('data-category') === filter) {
+                card.classList.remove('hidden');
+                card.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
+
+// === SMOOTH SCROLLING ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// === CONTACT FORM ===
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        alert('Grazie per il tuo messaggio! Ti risponderò al più presto.');
+
+        this.reset();
+    });
+}
+
+// === NEWSLETTER FORM ===
+const newsletterForm = document.getElementById('newsletterForm');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = this.querySelector('input[type="email"]').value;
+
+        // Here you would normally send to your email service (Mailchimp, SendGrid, etc.)
+        alert(`Grazie per l'iscrizione! 🎉\n\nRiceverai presto contenuti esclusivi e il tuo codice sconto del 10% all'indirizzo:\n${email}\n\nControlla la tua casella email!`);
+
+        this.reset();
+    });
+}
+
+// === SCROLL ANIMATIONS ===
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe product cards
+productCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
+});
+
+// === HEADER SCROLL EFFECT ===
+let lastScroll = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        header.style.transform = 'translateY(0)';
+    }
+
+    lastScroll = currentScroll;
+});
+
+// === INITIALIZE ===
+updateCart();
+
+console.log('🧘‍♀️ My Mindful Mandala - E-commerce pronto!');
