@@ -749,7 +749,7 @@ h1, h2, h3, h4 {
 
 .payment-btn {
     flex: 1;
-    padding: 0.9rem 1rem;
+    padding: 1rem 1.5rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -758,6 +758,9 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    text-transform: none;
 }
 
 .stripe-btn {
