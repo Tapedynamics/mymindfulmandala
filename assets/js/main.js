@@ -178,11 +178,24 @@ function initializeCart() {
 
     // Add to cart buttons
     const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
-    addToCartBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+    console.log('Found add-to-cart buttons:', addToCartBtns.length);
+
+    if (addToCartBtns.length === 0) {
+        console.warn('WARNING: No add-to-cart buttons found!');
+    }
+
+    addToCartBtns.forEach((btn, index) => {
+        console.log(`Attaching listener to button ${index + 1}:`, btn);
+
+        btn.addEventListener('click', function(e) {
+            console.log('Button clicked!', this);
+            e.stopPropagation(); // Prevent event bubbling
+
             const id = parseInt(this.getAttribute('data-id'));
             const name = this.getAttribute('data-name');
             const price = parseFloat(this.getAttribute('data-price'));
+
+            console.log('Adding to cart:', {id, name, price});
             addToCart(id, name, price);
 
             // Show animation feedback
@@ -325,11 +338,22 @@ function initializeHeaderScroll() {
 
 // === INITIALIZE ALL ===
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('===== DOMContentLoaded event fired =====');
+
+    console.log('Initializing cart...');
     initializeCart();
+
+    console.log('Initializing filters...');
     initializeFilters();
+
+    console.log('Initializing smooth scrolling...');
     initializeSmoothScrolling();
+
+    console.log('Initializing forms...');
     initializeForms();
+
+    console.log('Initializing header scroll...');
     initializeHeaderScroll();
 
-    console.log('My Mindful Mandala - E-commerce ready!');
+    console.log('===== My Mindful Mandala - E-commerce ready! =====');
 });

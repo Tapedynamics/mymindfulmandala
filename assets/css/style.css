@@ -468,6 +468,11 @@ h1, h2, h3, h4 {
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px var(--shadow);
     letter-spacing: 0.3px;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    touch-action: manipulation;
 }
 
 .add-to-cart-btn::before {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+    <style>
+        .test-btn {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Listener Test</h1>
+
+    <button class="add-to-cart-btn" data-id="1" data-name="Test Product" data-price="50.00">
+        Test Button 1
+    </button>
+
+    <button class="add-to-cart-btn" data-id="2" data-name="Test Product 2" data-price="75.00">
+        Test Button 2
+    </button>
+
+    <div id="output"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded fired');
+
+            const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+            console.log('Found buttons:', addToCartBtns.length);
+
+            addToCartBtns.forEach((btn, index) => {
+                console.log(`Attaching listener to button ${index + 1}`);
+                btn.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+
+                    document.getElementById('output').innerHTML += `<p>Clicked: ${name} - €${price} (ID: ${id})</p>`;
+                    console.log('Button clicked!', {id, name, price});
+                });
+            });
+
+            console.log('All listeners attached');
+        });
+    </script>
+</body>
+</html>
