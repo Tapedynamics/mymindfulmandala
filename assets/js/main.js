@@ -139,8 +139,14 @@ function handlePayPalPayment() {
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
+    // Check if PayPal SDK is loaded
+    if (typeof paypal === 'undefined') {
+        alert(`Pagamento PayPal\n\nTotale: €${total.toFixed(2)}\n\nPer attivare PayPal:\n1. Crea un account Business su paypal.com\n2. Ottieni il Client ID dal Developer Dashboard\n3. Sostituisci 'YOUR_PAYPAL_CLIENT_ID' in shop.html con il tuo Client ID\n4. Decommenta lo script PayPal nelle righe 493-494 di shop.html`);
+        return;
+    }
+
     // For now, show info message
-    alert(`Pagamento PayPal\n\nTotale: €${total.toFixed(2)}\n\nPer attivare PayPal:\n1. Crea un account Business su paypal.com\n2. Ottieni il Client ID\n3. Sostituisci 'YOUR_PAYPAL_CLIENT_ID' nell'HTML\n4. Il pulsante PayPal si attiverà automaticamente`);
+    alert(`Pagamento PayPal\n\nTotale: €${total.toFixed(2)}\n\nSDK PayPal caricato! Ora configura il tuo Client ID.`);
 
     // PayPal SDK will be initialized from the script tag
     // The actual PayPal button should be rendered here

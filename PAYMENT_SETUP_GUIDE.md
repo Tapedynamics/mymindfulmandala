@@ -76,14 +76,19 @@ app.post('/create-checkout-session', async (req, res) => {
 Apri `it/shop.html` e `en/shop.html` e cerca questa riga (circa linea 494):
 
 ```html
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR"></script>
+<!-- PayPal SDK - Commented out until valid Client ID is configured -->
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR"></script> -->
 ```
 
-Sostituisci `YOUR_PAYPAL_CLIENT_ID` con il tuo Client ID:
+**IMPORTANTE:** Lo script è commentato per evitare errori 400. Per attivarlo:
 
+1. Sostituisci `YOUR_PAYPAL_CLIENT_ID` con il tuo Client ID:
 ```html
+<!-- PayPal SDK -->
 <script src="https://www.paypal.com/sdk/js?client-id=AaBbCcDd12345xyz&currency=EUR"></script>
 ```
+
+2. Rimuovi il commento (togli `<!--` e `-->`)
 
 ### Step 4: Attiva PayPal JavaScript
 Il codice PayPal è già configurato in `assets/js/main.js`.
