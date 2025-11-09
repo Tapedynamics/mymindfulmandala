@@ -75,17 +75,6 @@ function addToCart(id, name, price) {
 
     updateCart();
     openCart();
-
-    // Show animation feedback
-    const btn = event.target;
-    const originalText = btn.textContent;
-    btn.textContent = 'Aggiunto!';
-    btn.style.background = '#27AE60';
-
-    setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-    }, 1000);
 }
 
 // Remove from Cart
@@ -189,6 +178,17 @@ addToCartBtns.forEach(btn => {
         const name = this.getAttribute('data-name');
         const price = parseFloat(this.getAttribute('data-price'));
         addToCart(id, name, price);
+
+        // Show animation feedback
+        const originalText = this.textContent;
+        const feedbackText = originalText.includes('Add') ? 'Added!' : 'Aggiunto!';
+        this.textContent = feedbackText;
+        this.style.background = '#27AE60';
+
+        setTimeout(() => {
+            this.textContent = originalText;
+            this.style.background = '';
+        }, 1000);
     });
 });
 
