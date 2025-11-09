@@ -119,18 +119,69 @@ function checkout() {
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const itemsList = cart.map(item => `${item.name} (x${item.quantity})`).join(', ');
 
-    alert(`Grazie per il tuo ordine!\n\nProdotti: ${itemsList}\nTotale: €${total.toFixed(2)}\n\nRiceverai una email di conferma a breve.`);
+    alert(`Seleziona un metodo di pagamento:\n- Stripe (Carta di credito)\n- PayPal\n\nProdotti: ${itemsList}\nTotale: €${total.toFixed(2)}`);
+}
 
-    cart = [];
-    updateCart();
-    closeCartSidebar();
+// Stripe Checkout
+function handleStripePayment() {
+    if (cart.length === 0) {
+        alert('Il carrello è vuoto!');
+        return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    // Initialize Stripe (you'll need to replace with your actual publishable key)
+    const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLISHABLE_KEY');
+
+    // For now, show info message
+    alert(`Pagamento Stripe\n\nTotale: €${total.toFixed(2)}\n\nPer attivare i pagamenti Stripe:\n1. Crea un account su stripe.com\n2. Ottieni le API keys\n3. Sostituisci 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY' con la tua chiave\n4. Configura il backend per creare sessioni di checkout`);
+
+    // Example: Redirect to Stripe Checkout
+    // stripe.redirectToCheckout({
+    //     lineItems: cart.map(item => ({
+    //         price: item.priceId, // You'll need to create prices in Stripe
+    //         quantity: item.quantity
+    //     })),
+    //     mode: 'payment',
+    //     successUrl: window.location.origin + '/success.html',
+    //     cancelUrl: window.location.origin + '/shop.html',
+    // });
+}
+
+// PayPal Checkout
+function handlePayPalPayment() {
+    if (cart.length === 0) {
+        alert('Il carrello è vuoto!');
+        return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    // For now, show info message
+    alert(`Pagamento PayPal\n\nTotale: €${total.toFixed(2)}\n\nPer attivare PayPal:\n1. Crea un account Business su paypal.com\n2. Ottieni il Client ID\n3. Sostituisci 'YOUR_PAYPAL_CLIENT_ID' nell'HTML\n4. Il pulsante PayPal si attiverà automaticamente`);
+
+    // PayPal SDK will be initialized from the script tag
+    // The actual PayPal button should be rendered here
 }
 
 // Event Listeners
 cartBtn.addEventListener('click', openCart);
 closeCart.addEventListener('click', closeCartSidebar);
 cartOverlay.addEventListener('click', closeCartSidebar);
-checkoutBtn.addEventListener('click', checkout);
+if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+
+// Payment buttons
+const stripeBtn = document.getElementById('stripeBtn');
+const paypalBtn = document.getElementById('paypalBtn');
+
+if (stripeBtn) {
+    stripeBtn.addEventListener('click', handleStripePayment);
+}
+
+if (paypalBtn) {
+    paypalBtn.addEventListener('click', handlePayPalPayment);
+}
 
 addToCartBtns.forEach(btn => {
     btn.addEventListener('click', function() {

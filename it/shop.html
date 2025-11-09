@@ -468,11 +468,30 @@
                 <span>Totale:</span>
                 <span id="cartTotal">€0.00</span>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Procedi all'Acquisto</button>
+            <div class="payment-buttons">
+                <button class="payment-btn stripe-btn" id="stripeBtn">
+                    <svg width="50" height="21" viewBox="0 0 50 21" fill="white">
+                        <path d="M7.8 20.4c-4.5 0-7.8-3-7.8-7.8s3.3-7.8 7.8-7.8c2.8 0 4.8 1.1 6.3 2.9l-2.5 2.1c-1-1.2-2.3-1.8-3.8-1.8-2.4 0-4.2 1.8-4.2 4.6s1.8 4.6 4.2 4.6c1.6 0 2.9-0.7 3.9-1.9l2.5 2.1c-1.5 1.9-3.6 3-6.4 3zm11.7-0.2V5h3.5v6.2h0.1c0.9-1.3 2.4-2.1 4.2-2.1 3.3 0 5.5 2.4 5.5 6.3v4.8h-3.5v-4.3c0-2.1-1.1-3.3-2.8-3.3-1.8 0-3 1.3-3 3.3v4.3h-3.5zm16.9 0V9.3h3.5v1.6h0.1c0.6-1.2 2-1.9 3.6-1.9 0.5 0 0.9 0.1 1.3 0.2v3.2c-0.5-0.2-1.1-0.3-1.7-0.3-1.9 0-3.3 1.2-3.3 3.2v4.9h-3.5zm13.6 0.2c-2.9 0-4.9-1.5-4.9-4 0-2.4 1.8-3.8 5.3-4.1l3.1-0.3v-0.3c0-1.3-0.9-2-2.5-2-1.4 0-2.4 0.6-2.7 1.6l-3.2-0.7c0.6-2.3 2.9-3.8 6-3.8 3.6 0 6 1.8 6 5v7.4h-3.4v-1.4h-0.1c-0.9 1.1-2.4 1.6-3.6 1.6zm1-2.7c1.8 0 3-1.1 3-2.5v-0.8l-2.5 0.3c-1.5 0.2-2.2 0.7-2.2 1.6 0 0.9 0.8 1.4 1.7 1.4z"/>
+                    </svg>
+                </button>
+                <button class="payment-btn paypal-btn" id="paypalBtn">
+                    <svg width="100" height="26" viewBox="0 0 100 26" fill="white">
+                        <path d="M35.9 7.9c-2.3 0-4.2 1.8-4.2 4.1 0 2.2 1.8 4 4.2 4 2.3 0 4.1-1.8 4.1-4 0-2.3-1.8-4.1-4.1-4.1zm9.8 0c-2.3 0-4.2 1.8-4.2 4.1 0 2.2 1.8 4 4.2 4 2.3 0 4.1-1.8 4.1-4 0-2.3-1.8-4.1-4.1-4.1z"/>
+                        <text x="55" y="18" font-family="Verdana" font-size="14" fill="white">PayPal</text>
+                    </svg>
+                </button>
+            </div>
+            <p class="payment-info">Pagamenti sicuri con Stripe e PayPal</p>
         </div>
     </div>
 
     <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Stripe SDK -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR"></script>
 
     <!-- Scripts -->
     <script src="../assets/js/main.js"></script>

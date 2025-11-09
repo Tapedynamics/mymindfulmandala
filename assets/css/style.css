@@ -717,21 +717,71 @@ h1, h2, h3, h4 {
 
 .checkout-btn {
     width: 100%;
-    background: var(--primary-blue);
+    background: var(--primary);
     color: var(--white);
     border: none;
     padding: 1rem;
-    border-radius: 25px;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .checkout-btn:hover {
-    background: var(--ocean-blue);
+    background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px var(--shadow-hover);
+}
+
+/* Payment Buttons */
+.payment-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.payment-btn {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.stripe-btn {
+    background: #635BFF;
+    color: white;
+}
+
+.stripe-btn:hover {
+    background: #4F46E5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 91, 255, 0.4);
+}
+
+.paypal-btn {
+    background: #0070BA;
+    color: white;
+}
+
+.paypal-btn:hover {
+    background: #005ea6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 112, 186, 0.4);
+}
+
+.payment-info {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .cart-overlay {
