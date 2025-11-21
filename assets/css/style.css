@@ -3533,7 +3533,7 @@ h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     font-weight: 400;
-    color: var(--teal-dark);
+    color: var(--teal-accent);
     margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
     line-height: 1.2;
