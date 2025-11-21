@@ -3234,3 +3234,527 @@ h1, h2, h3, h4 {
         font-size: 1.8rem;
     }
 }
+
+/* ============================================
+   MINIMAL DESIGN - INSPIRED BY THOUGHTFUL DOTS
+   NEW BRAND COLORS FROM LOGO DEFINITIVO
+   ============================================ */
+
+:root {
+    /* New Brand Colors from Logo */
+    --teal-light: #C5E5E8;      /* Azzurro turchese chiaro - sfondo */
+    --teal-medium: #A8D8DC;     /* Azzurro medio */
+    --teal-accent: #6BA8B0;     /* Teal accent */
+    --teal-dark: #4A8A92;       /* Teal scuro */
+
+    --gold-light: #D4BFA0;      /* Oro champagne - mandala logo */
+    --gold-medium: #C9B091;     /* Oro medio */
+    --gold-dark: #B39A7A;       /* Oro scuro */
+
+    --text-brand: #2C2C2C;      /* Nero/grigio scuro testo */
+    --text-light: #5A5A5A;      /* Grigio medio */
+    --white-pure: #FFFFFF;      /* Bianco puro */
+}
+
+/* Minimal Design Body */
+.minimal-design {
+    background: linear-gradient(135deg, var(--white-pure) 0%, var(--teal-light) 100%);
+    line-height: 1.8;
+}
+
+.minimal-design::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(168, 216, 220, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(212, 191, 160, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Container Minimal */
+.container-minimal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4vw;
+}
+
+/* Header Minimal */
+.header-minimal {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--teal-medium);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 12px rgba(107, 168, 176, 0.1);
+}
+
+.header-minimal .container-minimal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-minimal a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-brand);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-minimal {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-minimal a {
+    color: var(--text-brand);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+    position: relative;
+}
+
+.nav-minimal a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--teal-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-minimal a:hover::after,
+.nav-minimal a.active::after {
+    width: 100%;
+}
+
+.nav-minimal a:hover,
+.nav-minimal a.active {
+    color: var(--teal-accent);
+}
+
+.language-switcher-minimal {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.language-switcher-minimal .lang-link {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.language-switcher-minimal .lang-link.active {
+    color: var(--teal-accent);
+    font-weight: 500;
+}
+
+.language-switcher-minimal .lang-separator {
+    color: var(--teal-medium);
+}
+
+.cart-btn-minimal {
+    background: var(--white-pure);
+    border: 1.5px solid var(--teal-accent);
+    padding: 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal-accent);
+}
+
+.cart-btn-minimal:hover {
+    background: var(--teal-accent);
+    color: var(--white-pure);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 168, 176, 0.3);
+}
+
+.cart-count-minimal {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--gold-medium);
+    color: var(--text-brand);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 2px solid var(--white-pure);
+}
+
+/* Hero Minimal */
+.hero-minimal {
+    padding: 6vw 0 4vw;
+    text-align: center;
+}
+
+.hero-logo {
+    margin-bottom: 3rem;
+}
+
+.logo-large {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.hero-subtitle-minimal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--text-brand);
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+
+.hero-image-full {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.hero-image-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 6vw 0;
+}
+
+.content-section.bg-light {
+    background: rgba(197, 229, 232, 0.15);
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+}
+
+.split-layout.reverse {
+    direction: rtl;
+}
+
+.split-layout.reverse > * {
+    direction: ltr;
+}
+
+.split-content {
+    padding: 2rem 0;
+}
+
+.section-title-minimal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--teal-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.section-title-minimal.center {
+    text-align: center;
+}
+
+.section-text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.section-text.center {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-text.italic {
+    font-style: italic;
+    color: var(--teal-accent);
+    font-size: 1.1rem;
+    border-left: 3px solid var(--gold-medium);
+    padding-left: 1.5rem;
+    margin-top: 2rem;
+}
+
+.section-text.small {
+    font-size: 0.95rem;
+    color: var(--teal-accent);
+    font-style: italic;
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.link-minimal {
+    display: inline-block;
+    color: var(--teal-dark);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.link-minimal::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--gold-medium);
+    transition: width 0.3s ease;
+}
+
+.link-minimal:hover {
+    color: var(--teal-accent);
+    transform: translateX(5px);
+}
+
+.link-minimal:hover::after {
+    width: 100%;
+    background: var(--teal-accent);
+}
+
+/* Newsletter Minimal */
+.newsletter-minimal {
+    padding: 6vw 0;
+    background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal-medium) 100%);
+}
+
+.newsletter-content-minimal {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-form-minimal {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 2rem auto 0;
+}
+
+.newsletter-form-minimal input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--white-pure);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white-pure);
+}
+
+.newsletter-form-minimal input:focus {
+    outline: none;
+    border-color: var(--gold-medium);
+    box-shadow: 0 0 0 3px rgba(212, 191, 160, 0.2);
+}
+
+.btn-minimal {
+    padding: 1rem 2.5rem;
+    background: var(--teal-dark);
+    color: var(--white-pure);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-minimal:hover {
+    background: var(--teal-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 168, 176, 0.4);
+}
+
+/* Footer Minimal */
+.footer-minimal {
+    padding: 4vw 0 3vw;
+    background: var(--white-pure);
+    border-top: 2px solid var(--teal-light);
+}
+
+.footer-content-minimal {
+    text-align: center;
+}
+
+.social-links-minimal {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.social-links-minimal a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--teal-light);
+    border-radius: 8px;
+    color: var(--teal-accent);
+    transition: all 0.3s ease;
+    background: var(--white-pure);
+}
+
+.social-links-minimal a:hover {
+    background: var(--teal-accent);
+    color: var(--white-pure);
+    border-color: var(--teal-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(107, 168, 176, 0.3);
+}
+
+.footer-text-minimal {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+/* Responsive Minimal Design */
+@media (max-width: 768px) {
+    .container-minimal {
+        padding: 0 6vw;
+    }
+
+    .header-minimal {
+        padding: 1.5rem 0;
+    }
+
+    .nav-minimal {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .logo-minimal a {
+        font-size: 1.3rem;
+    }
+
+    .hero-minimal {
+        padding: 8vw 0 6vw;
+    }
+
+    .logo-large {
+        max-width: 200px;
+    }
+
+    .hero-subtitle-minimal {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .split-layout.reverse {
+        direction: ltr;
+    }
+
+    .section-title-minimal {
+        font-size: 2rem;
+    }
+
+    .section-text {
+        font-size: 1rem;
+    }
+
+    .content-section {
+        padding: 8vw 0;
+    }
+
+    .newsletter-form-minimal {
+        flex-direction: column;
+    }
+
+    .btn-minimal {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-subtitle-minimal {
+        font-size: 1rem;
+    }
+
+    .section-title-minimal {
+        font-size: 1.8rem;
+    }
+
+    .logo-large {
+        max-width: 180px;
+    }
+}
+
+/* Shop Hero Minimal */
+.shop-hero-minimal {
+    padding: 4vw 0 3vw;
+    background: rgba(197, 229, 232, 0.1);
+    text-align: center;
+}
+
+.shop-hero-minimal .section-title-minimal {
+    margin-bottom: 1rem;
+}
+
+.shop-hero-minimal .section-text {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-light);
+}
+
+/* Shop Filters & Products - adapt to minimal */
+.shop-filters {
+    padding: 3vw 0;
+    background: var(--white-pure);
+}
+
+.shop-products {
+    padding: 3vw 0 6vw;
+}
