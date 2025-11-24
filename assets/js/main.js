@@ -111,23 +111,19 @@ function handleStripePayment() {
     }
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const itemsList = cart.map(item => `${item.name} (x${item.quantity})`).join('\n');
 
-    // Initialize Stripe (you'll need to replace with your actual publishable key)
-    const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLISHABLE_KEY');
+    // Initialize Stripe with live publishable key
+    const stripe = Stripe('pk_live_51SRV73FEfZwEXl1z18JwrbfXxqRy8akuqle6g0QFC8arnH1hj5Hf9MyPgnpCsRT1sm2D0WjnE0CkRLPBCchGI12o00n5XhZDuM');
 
-    // For now, show info message
-    alert(`Pagamento Stripe\n\nTotale: €${total.toFixed(2)}\n\nPer attivare i pagamenti Stripe:\n1. Crea un account su stripe.com\n2. Ottieni le API keys\n3. Sostituisci 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY' con la tua chiave\n4. Configura il backend per creare sessioni di checkout`);
+    // NOTA: Stripe richiede un backend per creare sessioni di checkout sicure
+    // Per ora, raccogliamo i dati e inviamo via email
+    const emailSubject = encodeURIComponent('Ordine My Mindful Mandala - Stripe');
+    const emailBody = encodeURIComponent(
+        `Nuovo ordine:\n\n${itemsList}\n\nTotale: €${total.toFixed(2)}\n\nMetodo pagamento: Stripe`
+    );
 
-    // Example: Redirect to Stripe Checkout
-    // stripe.redirectToCheckout({
-    //     lineItems: cart.map(item => ({
-    //         price: item.priceId, // You'll need to create prices in Stripe
-    //         quantity: item.quantity
-    //     })),
-    //     mode: 'payment',
-    //     successUrl: window.location.origin + '/success.html',
-    //     cancelUrl: window.location.origin + '/shop.html',
-    // });
+    window.location.href = `mailto:Terry.cafagno@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 }
 
 // PayPal Checkout
@@ -138,18 +134,65 @@ function handlePayPalPayment() {
     }
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const itemsList = cart.map(item => `${item.name} (x${item.quantity})`).join('\n');
 
     // Check if PayPal SDK is loaded
     if (typeof paypal === 'undefined') {
-        alert(`Pagamento PayPal\n\nTotale: €${total.toFixed(2)}\n\nPer attivare PayPal:\n1. Crea un account Business su paypal.com\n2. Ottieni il Client ID dal Developer Dashboard\n3. Sostituisci 'YOUR_PAYPAL_CLIENT_ID' in shop.html con il tuo Client ID\n4. Decommenta lo script PayPal nelle righe 493-494 di shop.html`);
+        alert('Errore: SDK PayPal non caricato. Ricarica la pagina.');
         return;
     }
 
-    // For now, show info message
-    alert(`Pagamento PayPal\n\nTotale: €${total.toFixed(2)}\n\nSDK PayPal caricato! Ora configura il tuo Client ID.`);
+    // Create PayPal modal container
+    const modalHTML = `
+        <div id="paypalModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+            <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%;">
+                <h3 style="margin-top: 0; color: #2C2C2C;">Completa il pagamento</h3>
+                <p style="color: #5A5A5A; margin-bottom: 20px;">Totale: €${total.toFixed(2)}</p>
+                <div id="paypal-button-container"></div>
+                <button onclick="closePayPalModal()" style="margin-top: 15px; width: 100%; padding: 12px; background: #ddd; border: none; border-radius: 5px; cursor: pointer;">Annulla</button>
+            </div>
+        </div>
+    `;
 
-    // PayPal SDK will be initialized from the script tag
-    // The actual PayPal button should be rendered here
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // Render PayPal button
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: total.toFixed(2),
+                        currency_code: 'EUR'
+                    },
+                    description: itemsList
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                alert('Pagamento completato con successo!\n\nGrazie per il tuo acquisto ' + details.payer.name.given_name + '!');
+                cart = [];
+                updateCart();
+                closePayPalModal();
+                closeCartSidebar();
+            });
+        },
+        onError: function(err) {
+            alert('Si è verificato un errore durante il pagamento. Riprova.');
+            closePayPalModal();
+        },
+        onCancel: function(data) {
+            closePayPalModal();
+        }
+    }).render('#paypal-button-container');
+}
+
+function closePayPalModal() {
+    const modal = document.getElementById('paypalModal');
+    if (modal) {
+        modal.remove();
+    }
 }
 
 // Initialize DOM Elements and Event Listeners

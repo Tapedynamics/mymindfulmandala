@@ -1,0 +1,32 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# API Keys & Credentials
+config/credentials.txt
+credentials.txt
+CREDENZIALI_PAGAMENTI.txt
+*.key
+*.pem
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
