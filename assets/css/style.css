@@ -1626,10 +1626,10 @@ h1, h2, h3, h4 {
 
 /* === ABOUT PAGE === */
 .about-hero, .contact-hero, .blog-hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    padding: 5rem 0;
+    background: transparent;
+    padding: 5rem 0 3rem;
     text-align: center;
-    color: var(--white);
+    color: var(--text-brand);
     position: relative;
     overflow: hidden;
 }
