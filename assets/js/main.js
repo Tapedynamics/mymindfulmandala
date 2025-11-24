@@ -170,8 +170,8 @@ function handlePayPalPayment() {
 
     // Create PayPal modal container
     const modalHTML = `
-        <div id="paypalModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; display: flex; align-items: center; justify-content: center;">
-            <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%;">
+        <div id="paypalModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; padding: 20px 0;">
+            <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%; margin: auto; max-height: calc(100vh - 40px); overflow-y: auto;">
                 <h3 style="margin-top: 0; color: #2C2C2C;">Completa il pagamento</h3>
                 <p style="color: #5A5A5A; margin-bottom: 20px;">Totale: €${total.toFixed(2)}</p>
                 <div id="paypal-button-container"></div>
