@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordine Completato - My Mindful Mandala</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .success-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--teal-light) 0%, var(--gold-light) 100%);
+        }
+
+        .success-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #27AE60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .success-icon svg {
+            width: 50px;
+            height: 50px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-card h1 {
+            color: var(--teal-accent);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .order-details {
+            background: var(--teal-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .order-details h3 {
+            color: var(--teal-dark);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .order-details p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--teal-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--gold-medium);
+            color: var(--text-brand);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h1>Ordine Completato!</h1>
+            <p>Grazie per il tuo acquisto! Il pagamento è stato elaborato con successo.</p>
+
+            <div class="order-details" id="orderDetails">
+                <h3>Dettagli Ordine</h3>
+                <p><strong>Email di conferma:</strong> Riceverai un'email con tutti i dettagli del tuo ordine.</p>
+                <p><strong>Spedizione:</strong> Ti contatteremo entro 24 ore per confermare l'indirizzo di spedizione.</p>
+                <p><strong>Tracking:</strong> Riceverai il numero di tracking non appena il pacco verrà spedito.</p>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-light);">
+                Ogni mandala è creato con dedizione e mindfulness. Il tuo ordine sarà preparato con cura e spedito nel minor tempo possibile.
+            </p>
+
+            <div class="buttons">
+                <a href="/it/index.html" class="btn btn-primary">Torna alla Home</a>
+                <a href="/it/shop.html" class="btn btn-secondary">Continua a Comprare</a>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 0.9rem;">
+                Per qualsiasi domanda, contattaci a: <br>
+                <a href="mailto:Terry.cafagno@gmail.com" style="color: var(--teal-accent);">Terry.cafagno@gmail.com</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Get session_id from URL if available
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        if (sessionId) {
+            console.log('Stripe Session ID:', sessionId);
+            // You can use this to track the order or fetch more details
+        }
+    </script>
+</body>
+</html>

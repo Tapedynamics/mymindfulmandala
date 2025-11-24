@@ -1,0 +1,16 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Redirect rules
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Environment variables (configure these in Netlify dashboard)
+# STRIPE_SECRET_KEY = your_stripe_secret_key_here
+
+[dev]
+  functions = "netlify/functions"
+  publish = "."

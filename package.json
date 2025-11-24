@@ -1,0 +1,18 @@
+{
+  "name": "my-mindful-mandala",
+  "version": "1.0.0",
+  "description": "E-commerce site for handmade mandalas by Terry Cafagno",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "dependencies": {
+    "stripe": "^14.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "author": "Terry Cafagno",
+  "license": "MIT"
+}

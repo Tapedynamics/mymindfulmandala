@@ -104,26 +104,52 @@ function checkout() {
 }
 
 // Stripe Checkout
-function handleStripePayment() {
+async function handleStripePayment() {
     if (cart.length === 0) {
         alert('Il carrello è vuoto!');
         return;
     }
 
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const itemsList = cart.map(item => `${item.name} (x${item.quantity})`).join('\n');
+    // Show loading state
+    const stripeBtn = document.getElementById('stripeBtn');
+    const originalText = stripeBtn.textContent;
+    stripeBtn.textContent = 'Caricamento...';
+    stripeBtn.disabled = true;
 
-    // Initialize Stripe with live publishable key
-    const stripe = Stripe('pk_live_51SRV73FEfZwEXl1z18JwrbfXxqRy8akuqle6g0QFC8arnH1hj5Hf9MyPgnpCsRT1sm2D0WjnE0CkRLPBCchGI12o00n5XhZDuM');
+    try {
+        // Call Netlify Function to create checkout session
+        const response = await fetch('/.netlify/functions/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                items: cart.map(item => ({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity
+                }))
+            })
+        });
 
-    // NOTA: Stripe richiede un backend per creare sessioni di checkout sicure
-    // Per ora, raccogliamo i dati e inviamo via email
-    const emailSubject = encodeURIComponent('Ordine My Mindful Mandala - Stripe');
-    const emailBody = encodeURIComponent(
-        `Nuovo ordine:\n\n${itemsList}\n\nTotale: €${total.toFixed(2)}\n\nMetodo pagamento: Stripe`
-    );
+        const data = await response.json();
 
-    window.location.href = `mailto:Terry.cafagno@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+        if (!response.ok) {
+            throw new Error(data.error || 'Failed to create checkout session');
+        }
+
+        // Redirect to Stripe Checkout
+        window.location.href = data.url;
+
+    } catch (error) {
+        console.error('Stripe checkout error:', error);
+        alert('Errore durante il pagamento. Riprova o contattaci via email.');
+
+        // Restore button state
+        stripeBtn.textContent = originalText;
+        stripeBtn.disabled = false;
+    }
 }
 
 // PayPal Checkout
