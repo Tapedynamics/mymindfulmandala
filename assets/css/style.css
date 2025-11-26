@@ -323,8 +323,8 @@ h1, h2, h3, h4 {
 .filter-btn {
     padding: 0.7rem 1.5rem;
     background: var(--white);
-    border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    border: 2px solid var(--text-dark);
+    color: var(--text-dark);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 500;
@@ -333,10 +333,10 @@ h1, h2, h3, h4 {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--primary-blue);
+    background: var(--text-dark);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px var(--shadow-hover);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .products-grid {
@@ -444,7 +444,7 @@ h1, h2, h3, h4 {
 }
 
 .add-to-cart-btn.custom-order {
-    background: linear-gradient(135deg, #C9B091 0%, #B39A7A 100%);
+    background: var(--text-dark);
     color: white;
     text-decoration: none;
     display: inline-flex;
@@ -453,7 +453,7 @@ h1, h2, h3, h4 {
 }
 
 .add-to-cart-btn.custom-order:hover {
-    background: linear-gradient(135deg, #B39A7A 0%, #9A8366 100%);
+    background: #000;
     transform: translateY(-2px);
 }
 
@@ -497,7 +497,7 @@ h1, h2, h3, h4 {
 }
 
 .add-to-cart-btn {
-    background: var(--primary);
+    background: var(--text-dark);
     color: var(--white);
     border: none;
     padding: 0.8rem 1.8rem;
@@ -505,7 +505,7 @@ h1, h2, h3, h4 {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px var(--shadow);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     letter-spacing: 0.3px;
     position: relative;
     z-index: 10;
@@ -524,9 +524,9 @@ h1, h2, h3, h4 {
 }
 
 .add-to-cart-btn:hover {
-    background: var(--primary-dark);
+    background: #000;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--shadow-hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* === CONTACT SECTION === */
@@ -1022,29 +1022,29 @@ h1, h2, h3, h4 {
 }
 
 .cta-btn.primary {
-    background: var(--secondary);
+    background: var(--text-dark);
     color: var(--white);
     font-weight: 700;
 }
 
 .cta-btn.primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px var(--shadow-hover);
-    background: var(--secondary-light);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background: #000;
 }
 
 .cta-btn.secondary {
     background: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: var(--text-dark);
+    border: 2px solid var(--text-dark);
     font-weight: 700;
 }
 
 .cta-btn.secondary:hover {
-    background: var(--white);
-    color: var(--primary);
+    background: var(--text-dark);
+    color: var(--white);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .cta-btn.instagram {
@@ -3408,7 +3408,7 @@ h1, h2, h3, h4 {
 
 .cart-btn-minimal {
     background: var(--white-pure);
-    border: 1.5px solid var(--teal-accent);
+    border: 2px solid var(--text-brand);
     padding: 0.6rem;
     border-radius: 6px;
     cursor: pointer;
@@ -3417,14 +3417,14 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--teal-accent);
+    color: var(--text-brand);
 }
 
 .cart-btn-minimal:hover {
-    background: var(--teal-accent);
+    background: var(--text-brand);
     color: var(--white-pure);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(107, 168, 176, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cart-count-minimal {
@@ -3545,10 +3545,10 @@ h1, h2, h3, h4 {
 
 .section-text {
     font-size: 1.05rem;
-    color: var(--text-light);
+    color: var(--text-brand);
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .section-text.center {
@@ -3591,10 +3591,10 @@ h1, h2, h3, h4 {
 
 .link-minimal {
     display: inline-block;
-    color: var(--teal-dark);
+    color: var(--text-brand);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 1rem;
     transition: all 0.3s ease;
     position: relative;
@@ -3659,21 +3659,21 @@ h1, h2, h3, h4 {
 
 .btn-minimal {
     padding: 1rem 2.5rem;
-    background: var(--teal-dark);
+    background: var(--text-brand);
     color: var(--white-pure);
     border: none;
     border-radius: 6px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
 }
 
 .btn-minimal:hover {
-    background: var(--teal-accent);
+    background: #1a1a1a;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 168, 176, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Footer Minimal */
