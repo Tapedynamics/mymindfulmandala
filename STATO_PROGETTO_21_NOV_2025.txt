@@ -1,0 +1,222 @@
+================================================================================
+    MY MINDFUL MANDALA - STATO PROGETTO
+    Data: 21 Novembre 2025, ore 11:00
+    Ultima sessione di lavoro con Claude Code
+================================================================================
+
+📍 DOVE SIAMO
+================================================================================
+
+✅ LAVORI COMPLETATI OGGI:
+
+1. HOMEPAGE (index.html - IT/EN)
+   ✓ Implementata alternanza visiva degli hero sections
+   ✓ Hero 2: testo SX → immagine DX
+   ✓ Hero 3: immagine SX → testo DX
+   ✓ Hero 4: testo SX → immagine DX
+   ✓ Hero 5: immagine SX → testo DX
+   ✓ Ritmo visivo elegante e bilanciato
+
+2. PAGINA SHOP (shop.html - IT/EN)
+   ✓ Creata sezione SOLD OUT in cima (6 mandala venduti)
+   ✓ Aggiunti 3 nuovi prodotti disponibili:
+     - Calming Ocean Mandala (€95)
+     - Lavander Dream Mandala (€85)
+     - Neutral Palette Crystal Mandala 50cm (€140)
+   ✓ Aggiunti 8 portachiavi dalla collezione (€15 cad.)
+   ✓ Rimossi 14 prodotti vecchi con immagini non dalla collezione
+   ✓ Badge "VENDUTO/SOLD OUT" con styling custom
+   ✓ Bottoni "Ordina Simile" che linkano a contatti
+   ✓ CSS: stili per prodotti venduti (opacità, filtro grayscale)
+
+3. PAGINA CHI SIAMO / ABOUT (chi-siamo.html / about.html - IT/EN)
+   ✓ Sostituito testo biografico con nuovo contenuto:
+     - Terry come insegnante e istruttrice mindfulness certificata
+     - Focus su iperattività, alta sensibilità, equilibrio
+     - Spiegazione mandala come simboli sacri
+   ✓ Rimossa sezione "Il Mio Processo Creativo" (3 step)
+   ✓ Modificata sezione "I miei valori": "felicità" → "serenità"
+   ✓ Sostituite 4 foto galleria con foto atelier
+   ✓ Nuovo colore h1: da --teal-dark (#4A8A92) a --teal-accent (#6BA8B0)
+
+4. CSS GLOBALE (style.css)
+   ✓ Cambiato colore titoli .section-title-minimal
+   ✓ Aggiunti stili per sezione SOLD OUT
+   ✓ Badge e bottoni personalizzati per prodotti venduti
+
+5. IMMAGINI
+   ✓ Copiate 4 foto atelier in assets/images/
+   ✓ Copiate 25 foto collezione in assets/images/
+   ✓ Rimosse immagini vecchie non utilizzate
+
+6. GIT & GITHUB
+   ✓ 3 commit pushati su main branch:
+     - 73441cf: Alternanza hero homepage
+     - b43ef39: Sezione SOLD OUT + nuovi prodotti shop
+     - 8f9aa89: Rimozione prodotti vecchi
+     - 98afb61: Update pagina Chi Siamo + foto atelier
+
+================================================================================
+
+📋 INVENTARIO ATTUALE PRODOTTI SHOP
+================================================================================
+
+SEZIONE SOLD OUT (6 prodotti):
+- Turquoise Sunset Mandala
+- Blue Violet Dream Mandala
+- Rainbow Joy Mandala (20x20 cm)
+- Rainbow Energy Mandala (20x20 cm)
+- Pink Power Mandala (30 cm)
+- Pink Blossom Mandala
+
+DISPONIBILI ORA (3 mandala):
+1. Calming Ocean Mandala - €95
+2. Lavander Dream Mandala - €85
+3. Neutral Palette Crystal Mandala (50cm con cristalli) - €140
+
+PORTACHIAVI (8 pezzi):
+- Tutti dipinti a mano - €15 ciascuno
+- Nomi: Sunset, Passion, Harmony, Serenity, Joy, Energy, Peace, Bliss
+
+TOTALE PRODOTTI: 17 (6 sold + 3 mandalas + 8 keychains)
+
+================================================================================
+
+🎨 PALETTE COLORI ATTUALE
+================================================================================
+
+TEAL (Turchese):
+- --teal-light: #C5E5E8 (sfondo)
+- --teal-medium: #A8D8DC (elementi secondari)
+- --teal-accent: #6BA8B0 (TITOLI H1 - NUOVO)
+- --teal-dark: #4A8A92 (elementi scuri)
+
+GOLD (Oro Champagne):
+- --gold-light: #D4BFA0
+- --gold-medium: #C9B091
+- --gold-dark: #B39A7A
+
+TESTO:
+- --text-brand: #2C2C2C (nero/grigio scuro)
+- --text-light: #5A5A5A (grigio medio)
+
+================================================================================
+
+📂 CARTELLE RISORSE DISPONIBILI (non ancora utilizzate)
+================================================================================
+
+✓ foto/atelier/ (4 foto) → UTILIZZATE nella pagina Chi Siamo
+✓ foto/collezione/ (25 foto) → UTILIZZATE nella pagina Shop
+? foto/heros/ (cartella presente ma contenuto non verificato)
+? articoli blog/ (cartella presente ma contenuto non verificato)
+
+Altri file nella cartella foto/:
+- h1.jpg
+- ultimohero.jpg
+- logo definitivo.jpeg
+
+================================================================================
+
+🔧 COSA RESTA DA FARE
+================================================================================
+
+PRIORITÀ ALTA:
+□ Verificare altre pagine del sito (Blog, Contatti)
+□ Controllare coerenza design su tutte le 10 pagine
+□ Testare responsive design (mobile, tablet, desktop)
+□ Verificare funzionalità carrello shop
+□ Testare filtri prodotti nella pagina shop
+□ Controllare link interni tra pagine
+
+PRIORITÀ MEDIA:
+□ Ottimizzare dimensioni immagini (hero1.png è 2.1 MB)
+□ Configurare pagamenti Stripe/PayPal
+□ Aggiungere Google Analytics
+□ SEO: verificare meta tags, sitemap, robots.txt
+□ Verificare contenuto cartella "articoli blog"
+□ Decidere uso di foto/heros/
+
+PRIORITÀ BASSA:
+□ Accessibility audit (WCAG AA)
+□ Browser compatibility testing
+□ Performance optimization (Lighthouse)
+□ Aggiungere animazioni/transizioni se necessario
+
+DECISIONI DA PRENDERE:
+? Usare foto da cartella heros/ nella homepage?
+? Pubblicare articoli dalla cartella "articoli blog"?
+? Aggiungere altri prodotti dalla collezione?
+? Modificare altre sezioni del sito?
+
+================================================================================
+
+📊 STATISTICHE PROGETTO
+================================================================================
+
+Pagine totali: 12 (6 IT + 6 EN)
+- index.html (redirect linguistico)
+- it/: index, shop, chi-siamo, blog, contatti + (1 pagina non verificata)
+- en/: index, shop, about, blog, contact + (1 pagina non verificata)
+
+Righe CSS: ~3,800
+Righe JavaScript: ~365
+Prodotti shop: 17 (6 sold + 11 available)
+Immagini assets: 40+ foto
+Commits totali: 30+
+Branch: main
+
+Repository: https://github.com/Tapedynamics/mymindfulmandala
+
+================================================================================
+
+🎯 PROSSIMI PASSI CONSIGLIATI
+================================================================================
+
+1. PAUSA E REVISIONE
+   - Visualizzare il sito nel browser
+   - Controllare che tutto funzioni correttamente
+   - Verificare la pagina Chi Siamo con le nuove foto atelier
+   - Controllare la pagina Shop con i nuovi prodotti
+
+2. DECISIONI STRATEGICHE
+   - Decidere quali altre pagine modificare
+   - Valutare se aggiungere altri prodotti dalla collezione
+   - Decidere l'uso delle foto in foto/heros/
+   - Pianificare pubblicazione articoli blog
+
+3. TESTING
+   - Testare su dispositivi diversi (mobile, tablet, desktop)
+   - Verificare tutti i link
+   - Testare il carrello e i filtri
+   - Controllare che le immagini carichino correttamente
+
+4. OTTIMIZZAZIONE
+   - Ridurre dimensioni immagini pesanti
+   - Configurare pagamenti se necessario
+   - Aggiungere analytics se necessario
+
+================================================================================
+
+💡 NOTE IMPORTANTI
+================================================================================
+
+- Tutti i prodotti shop usano SOLO immagini dalla cartella collezione
+- Gli hero della homepage alternano correttamente testo/immagine
+- Il colore h1 è stato cambiato da marrone scuro a teal accent
+- La biografia nella pagina Chi Siamo è stata aggiornata
+- Sezione SOLD OUT permette ordini simili tramite link a contatti
+- Design minimalista coerente su tutte le pagine modificate
+
+================================================================================
+
+📧 CONTATTI PROGETTO
+================================================================================
+
+Email: Terry.cafagno@gmail.com
+Instagram: @my_mindful_mandala
+Facebook: Sweetmamacreations
+Sito: https://github.com/Tapedynamics/mymindfulmandala (GitHub Pages)
+
+================================================================================
+FINE DOCUMENTO - Aggiornato: 21 Novembre 2025, ore 11:00
+================================================================================

@@ -1,20 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.facebook.com)",
-      "WebFetch(domain:www.instagram.com)",
-      "Bash(dir:*)",
-      "Bash(move style.css assetscssstyle.css)",
-      "Bash(move script.js assetsjsmain.js)",
-      "Bash(git init:*)",
-      "Bash(git remote add:*)",
+      "Bash(node -e:*)",
+      "WebFetch(domain:www.thoughtfuldots.com)",
       "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git branch:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nRedesign complete site with minimal layout inspired by Thoughtful Dots\n\n- Apply minimal design across all 10 pages (IT/EN)\n- Implement new brand colors from logo definitivo (teal/gold palette)\n- Add 450+ lines of new minimal CSS\n- Update all headers with clean navigation\n- Replace all footers with simplified minimal design\n- Integrate new logo definitivo.jpeg\n- Maintain all existing functionality (cart, filters, forms)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(for file in *.html)",
-      "Bash(do sed -i 's/✨//g; s/🧘‍♀️//g; s/🎨//g; s/💫//g; s/🌈//g; s/💖//g; s/🏠//g; s/🤍//g; s/💙//g; s/📚//g; s/💎//g; s/💰//g; s/🆕//g; s/🔍//g; s/🎂//g; s/🌟//g; s/🌸//g' \"$file\")",
-      "Bash(done)"
+      "Bash(git commit:*)",
+      "Bash(python -c \"import docx2txt; print(docx2txt.process(''articoli blog/ARTICOLI BLOG.docx''))\")",
+      "Bash(git rm:*)",
+      "Bash(dir \"C:\\Users\\siusk\\OneDrive\\Desktop\\Tape-Dynamics\\Terry\\assets\")",
+      "Bash(git -C \"C:\\Users\\siusk\\OneDrive\\Desktop\\Tape-Dynamics\\Terry\" log --oneline -15)"
     ],
     "deny": [],
     "ask": []

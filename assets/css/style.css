@@ -1918,7 +1918,7 @@ h1, h2, h3, h4 {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .cta-box h2 {
@@ -2176,7 +2176,7 @@ h1, h2, h3, h4 {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .cta-box-contact h2 {
@@ -2329,7 +2329,7 @@ h1, h2, h3, h4 {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .newsletter-box-blog h2 {
@@ -3632,6 +3632,14 @@ h1, h2, h3, h4 {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
+}
+
+.newsletter-minimal .section-title-minimal {
+    color: var(--text-brand);
+}
+
+.newsletter-minimal .section-text {
+    color: var(--text-brand);
 }
 
 .newsletter-form-minimal {
