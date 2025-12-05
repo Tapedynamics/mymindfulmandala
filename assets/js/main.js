@@ -417,16 +417,19 @@ function initializeLightbox() {
     console.log('Found ' + images.length + ' product images');
 
     for (var i = 0; i < images.length; i++) {
-        // Forza stili via JS
         images[i].style.cursor = 'pointer';
         images[i].style.pointerEvents = 'auto';
+        images[i].style.position = 'relative';
+        images[i].style.zIndex = '100';
 
-        images[i].onclick = function() {
+        // Usa addEventListener con capture per intercettare prima di tutto
+        images[i].addEventListener('click', function(e) {
+            e.stopPropagation();
             console.log('Image clicked!');
             var card = this.closest('.product-card');
             var name = card.querySelector('.product-name').textContent;
             openLightbox(this.src, name);
-        };
+        }, true);
     }
 }
 
