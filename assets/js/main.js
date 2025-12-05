@@ -413,25 +413,29 @@ function initializeHeaderScroll() {
 
 // === LIGHTBOX FOR PRODUCT IMAGES ===
 function initializeLightbox() {
-    // Quick view buttons
-    const quickViewBtns = document.querySelectorAll('.quick-view');
-    quickViewBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+    // Use event delegation for better reliability
+    document.addEventListener('click', function(e) {
+        // Check if clicked on quick-view button
+        if (e.target.classList.contains('quick-view')) {
             e.preventDefault();
             e.stopPropagation();
-            openLightboxFromCard(this.closest('.product-card'));
-        });
-    });
+            const productCard = e.target.closest('.product-card');
+            if (productCard) {
+                openLightboxFromCard(productCard);
+            }
+            return;
+        }
 
-    // Also allow clicking directly on product images
-    const productImages = document.querySelectorAll('.product-card .product-image img');
-    productImages.forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            openLightboxFromCard(this.closest('.product-card'));
-        });
+        // Check if clicked on product image
+        const productImage = e.target.closest('.product-image img');
+        if (productImage) {
+            const productCard = productImage.closest('.product-card');
+            if (productCard) {
+                e.preventDefault();
+                e.stopPropagation();
+                openLightboxFromCard(productCard);
+            }
+        }
     });
 }
 
