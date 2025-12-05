@@ -3715,23 +3715,119 @@ h1, h2, h3, h4 {
 }
 
 /* Responsive Minimal Design */
+/* === HAMBURGER MENU MOBILE === */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-brand);
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 @media (max-width: 768px) {
     .container-minimal {
         padding: 0 6vw;
     }
 
     .header-minimal {
-        padding: 1.5rem 0;
+        padding: 1rem 0;
+    }
+
+    .header-minimal .container-minimal {
+        position: relative;
+    }
+
+    .hamburger-btn {
+        display: flex;
     }
 
     .nav-minimal {
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--white-pure);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 30px 30px;
+        gap: 0;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-minimal.active {
+        right: 0;
+    }
+
+    .nav-minimal a {
+        padding: 15px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--teal-light);
+        width: 100%;
+    }
+
+    .nav-minimal a::after {
+        display: none;
+    }
+
+    .language-switcher-minimal {
+        padding: 20px 0;
+        justify-content: flex-start;
+    }
+
+    .cart-btn-minimal {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+
+    .mobile-overlay.active {
+        display: block;
     }
 
     .logo-minimal a {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .hero-minimal {

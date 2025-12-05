@@ -481,6 +481,53 @@ function closeLightbox() {
     }
 }
 
+// === MOBILE MENU ===
+function initializeMobileMenu() {
+    var header = document.querySelector('.header-minimal .container-minimal');
+    var nav = document.querySelector('.nav-minimal');
+
+    if (!header || !nav) return;
+
+    // Crea pulsante hamburger
+    var hamburger = document.createElement('button');
+    hamburger.className = 'hamburger-btn';
+    hamburger.innerHTML = '<span></span><span></span><span></span>';
+    hamburger.setAttribute('aria-label', 'Menu');
+    header.appendChild(hamburger);
+
+    // Crea overlay
+    var overlay = document.createElement('div');
+    overlay.className = 'mobile-overlay';
+    document.body.appendChild(overlay);
+
+    // Toggle menu
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Chiudi menu cliccando su overlay
+    overlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Chiudi menu cliccando su un link
+    var navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
 // === INITIALIZE ALL ===
 document.addEventListener('DOMContentLoaded', function() {
     console.log('===== DOMContentLoaded event fired =====');
@@ -502,6 +549,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Initializing lightbox...');
     initializeLightbox();
+
+    console.log('Initializing mobile menu...');
+    initializeMobileMenu();
 
     console.log('===== My Mindful Mandala - E-commerce ready! =====');
 });
