@@ -481,6 +481,71 @@ function closeLightbox() {
     }
 }
 
+// === COOKIE BANNER ===
+function initializeCookieBanner() {
+    // Se già accettato/rifiutato, non mostrare
+    if (localStorage.getItem('cookieConsent')) {
+        return;
+    }
+
+    // Detect language
+    var isItalian = window.location.pathname.includes('/it/') ||
+                    document.documentElement.lang === 'it';
+
+    // Testi in italiano e inglese
+    var texts = {
+        it: {
+            title: 'Utilizziamo i Cookie',
+            message: 'Questo sito utilizza cookie per migliorare la tua esperienza di navigazione e per analizzare il traffico del sito.',
+            accept: 'Accetta',
+            reject: 'Rifiuta'
+        },
+        en: {
+            title: 'We Use Cookies',
+            message: 'This site uses cookies to improve your browsing experience and to analyze site traffic.',
+            accept: 'Accept',
+            reject: 'Decline'
+        }
+    };
+
+    var t = isItalian ? texts.it : texts.en;
+
+    // Crea banner
+    var banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.innerHTML =
+        '<div class="cookie-banner-content">' +
+            '<div class="cookie-banner-text">' +
+                '<h4>' + t.title + '</h4>' +
+                '<p>' + t.message + '</p>' +
+            '</div>' +
+            '<div class="cookie-banner-buttons">' +
+                '<button class="cookie-btn accept">' + t.accept + '</button>' +
+                '<button class="cookie-btn reject">' + t.reject + '</button>' +
+            '</div>' +
+        '</div>';
+
+    document.body.appendChild(banner);
+
+    // Mostra dopo un breve delay
+    setTimeout(function() {
+        banner.classList.add('show');
+    }, 1000);
+
+    // Gestisci click
+    banner.querySelector('.cookie-btn.accept').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function() { banner.remove(); }, 400);
+    });
+
+    banner.querySelector('.cookie-btn.reject').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'rejected');
+        banner.classList.remove('show');
+        setTimeout(function() { banner.remove(); }, 400);
+    });
+}
+
 // === MOBILE MENU ===
 function initializeMobileMenu() {
     var header = document.querySelector('.header-minimal .container-minimal');
@@ -552,6 +617,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Initializing mobile menu...');
     initializeMobileMenu();
+
+    console.log('Initializing cookie banner...');
+    initializeCookieBanner();
 
     console.log('===== My Mindful Mandala - E-commerce ready! =====');
 });
