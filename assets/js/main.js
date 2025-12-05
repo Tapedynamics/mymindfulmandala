@@ -413,10 +413,16 @@ function initializeHeaderScroll() {
 
 // === LIGHTBOX FOR PRODUCT IMAGES ===
 function initializeLightbox() {
-    // Metodo semplice: onclick diretto su ogni immagine
     var images = document.querySelectorAll('.product-card .product-image img');
+    console.log('Found ' + images.length + ' product images');
+
     for (var i = 0; i < images.length; i++) {
+        // Forza stili via JS
+        images[i].style.cursor = 'pointer';
+        images[i].style.pointerEvents = 'auto';
+
         images[i].onclick = function() {
+            console.log('Image clicked!');
             var card = this.closest('.product-card');
             var name = card.querySelector('.product-name').textContent;
             openLightbox(this.src, name);
