@@ -411,6 +411,67 @@ function initializeHeaderScroll() {
     }
 }
 
+// === LIGHTBOX FOR PRODUCT IMAGES ===
+function initializeLightbox() {
+    const quickViewBtns = document.querySelectorAll('.quick-view');
+
+    quickViewBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Find the product image
+            const productCard = this.closest('.product-card');
+            const img = productCard.querySelector('.product-image img');
+            const productName = productCard.querySelector('.product-name').textContent;
+
+            if (img) {
+                openLightbox(img.src, productName);
+            }
+        });
+    });
+}
+
+function openLightbox(imageSrc, title) {
+    const lightboxHTML = `
+        <div id="imageLightbox" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <button onclick="closeLightbox()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 40px; cursor: pointer; z-index: 10001;">&times;</button>
+            <div style="max-width: 90%; max-height: 90%; text-align: center;">
+                <img src="${imageSrc}" alt="${title}" style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                <p style="color: white; margin-top: 15px; font-size: 18px; font-family: 'Cormorant Garamond', serif;">${title}</p>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+    document.body.style.overflow = 'hidden';
+
+    // Close on background click
+    document.getElementById('imageLightbox').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', handleLightboxEsc);
+}
+
+function handleLightboxEsc(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    if (lightbox) {
+        lightbox.remove();
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleLightboxEsc);
+    }
+}
+
 // === INITIALIZE ALL ===
 document.addEventListener('DOMContentLoaded', function() {
     console.log('===== DOMContentLoaded event fired =====');
@@ -429,6 +490,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Initializing header scroll...');
     initializeHeaderScroll();
+
+    console.log('Initializing lightbox...');
+    initializeLightbox();
 
     console.log('===== My Mindful Mandala - E-commerce ready! =====');
 });
