@@ -3730,6 +3730,27 @@ h1, h2, h3, h4 {
     text-decoration: underline;
 }
 
+/* === BREADCRUMBS === */
+.breadcrumbs {
+    background: rgba(197, 229, 232, 0.15);
+    padding: 12px 0;
+    font-size: 0.85rem;
+}
+
+.breadcrumbs a {
+    color: var(--teal-accent);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: var(--text-light);
+    margin: 0 8px;
+}
+
 /* Responsive Minimal Design */
 /* === HAMBURGER MENU MOBILE === */
 .hamburger-btn {

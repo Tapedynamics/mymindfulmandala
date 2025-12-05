@@ -2,6 +2,18 @@
   publish = "."
   functions = "netlify/functions"
 
+# Language-based redirects for root
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 302
+  conditions = {Language = ["it"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+
 # Redirect rules
 [[redirects]]
   from = "/.netlify/functions/*"
