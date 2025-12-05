@@ -413,18 +413,15 @@ function initializeHeaderScroll() {
 
 // === LIGHTBOX FOR PRODUCT IMAGES ===
 function initializeLightbox() {
-    // Use event delegation for better reliability
-    document.addEventListener('click', function(e) {
-        // Check if clicked on an image inside .product-image
-        if (e.target.tagName === 'IMG' && e.target.closest('.product-image')) {
-            const productCard = e.target.closest('.product-card');
-            if (productCard) {
-                e.preventDefault();
-                e.stopPropagation();
-                openLightboxFromCard(productCard);
-            }
-        }
-    });
+    // Metodo semplice: onclick diretto su ogni immagine
+    var images = document.querySelectorAll('.product-card .product-image img');
+    for (var i = 0; i < images.length; i++) {
+        images[i].onclick = function() {
+            var card = this.closest('.product-card');
+            var name = card.querySelector('.product-name').textContent;
+            openLightbox(this.src, name);
+        };
+    }
 }
 
 function openLightboxFromCard(productCard) {
