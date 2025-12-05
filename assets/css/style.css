@@ -1244,41 +1244,23 @@ h1, h2, h3, h4 {
     border: 3px solid var(--gold);
 }
 
+/* Overlay nascosto - click diretto su immagine */
 .product-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(74, 144, 226, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.product-card:hover .product-overlay {
-    opacity: 1;
-    pointer-events: auto;
+    display: none;
 }
 
 .quick-view {
-    background: var(--white);
-    color: var(--primary-blue);
-    padding: 0.8rem 2rem;
-    border-radius: 25px;
-    border: none;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    display: none;
 }
 
-.quick-view:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* Click sull'immagine per ingrandire */
+.product-image img {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.product-image img:hover {
+    opacity: 0.85;
 }
 
 .product-badge.new {

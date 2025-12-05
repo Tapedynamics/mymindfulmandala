@@ -415,21 +415,9 @@ function initializeHeaderScroll() {
 function initializeLightbox() {
     // Use event delegation for better reliability
     document.addEventListener('click', function(e) {
-        // Check if clicked on quick-view button
-        if (e.target.classList.contains('quick-view')) {
-            e.preventDefault();
-            e.stopPropagation();
+        // Check if clicked on an image inside .product-image
+        if (e.target.tagName === 'IMG' && e.target.closest('.product-image')) {
             const productCard = e.target.closest('.product-card');
-            if (productCard) {
-                openLightboxFromCard(productCard);
-            }
-            return;
-        }
-
-        // Check if clicked on product image
-        const productImage = e.target.closest('.product-image img');
-        if (productImage) {
-            const productCard = productImage.closest('.product-card');
             if (productCard) {
                 e.preventDefault();
                 e.stopPropagation();
