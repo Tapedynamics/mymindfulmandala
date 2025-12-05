@@ -4023,12 +4023,13 @@ h1, h2, h3, h4 {
 }
 
 .cookie-btn.accept {
-    background: var(--gold-accent);
-    color: var(--text-brand);
+    background: #D4A574;
+    color: #2C2C2C;
 }
 
 .cookie-btn.accept:hover {
-    background: var(--white-pure);
+    background: #ffffff;
+    color: #2C2C2C;
 }
 
 .cookie-btn.reject {
