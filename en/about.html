@@ -142,6 +142,26 @@
             <!-- TD:TESTIMONIALS:START -->
                 <!-- TD:TESTIMONIALS:END -->
             </div>
+
+            <div class="review-form-wrap">
+                <button type="button" class="cta-btn secondary" id="reviewToggle" aria-expanded="false" aria-controls="reviewForm">Leave a review</button>
+                <form class="review-form hidden" id="reviewForm" novalidate>
+                    <p class="review-form-title">Tell us about your experience</p>
+                    <div class="review-stars" id="reviewStars" role="group" aria-label="1-5">
+                            <button type="button" class="star" data-v="1" aria-label="1 stars">★</button>
+                            <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
+                            <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
+                            <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
+                            <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+                    </div>
+                    <input type="text" id="reviewName" placeholder="Your name" maxlength="80" autocomplete="name">
+                    <textarea id="reviewBody" rows="4" placeholder="Your review" maxlength="1500"></textarea>
+                    <input type="text" id="reviewWebsite" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <button type="submit" class="cta-btn" id="reviewSubmit">Send review</button>
+                    <p class="review-msg" id="reviewMsg"></p>
+                    <p class="review-msg">Your review will be published after Terry has read it.</p>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -245,5 +265,6 @@
 
     <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/reviews.js"></script>
 </body>
 </html>

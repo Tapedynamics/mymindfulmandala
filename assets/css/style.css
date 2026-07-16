@@ -1427,6 +1427,65 @@ h1, h2, h3, h4 {
     filter: drop-shadow(0 2px 5px rgba(255, 215, 0, 0.5));
 }
 
+/* ===== Form recensioni (lasciate dai visitatori, pubblicate dopo approvazione) ===== */
+.review-form-wrap { text-align: center; margin-top: 3rem; }
+
+.review-form {
+    max-width: 560px;
+    margin: 1.5rem auto 0;
+    background: var(--white);
+    border: 1px solid var(--beige);
+    border-radius: 12px;
+    padding: 1.8rem;
+    text-align: left;
+}
+.review-form.hidden { display: none; }
+
+.review-form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    margin: 0 0 1rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.review-stars { display: flex; justify-content: center; gap: 6px; margin-bottom: 1.2rem; }
+.review-stars .star {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0 2px;
+    color: var(--beige);
+    transition: color .15s, transform .15s;
+}
+.review-stars .star:hover { transform: scale(1.12); }
+.review-stars .star.on { color: var(--primary); }
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.9rem;
+    border: 1px solid var(--beige);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: var(--cream);
+}
+.review-form input[type="text"]:focus,
+.review-form textarea:focus { outline: none; border-color: var(--primary); }
+.review-form textarea { resize: vertical; }
+
+/* trappola anti-bot: fuori schermo, invisibile ma compilabile dagli automatismi */
+.review-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.review-msg { margin: 0.8rem 0 0; font-size: 0.9rem; text-align: center; min-height: 1.2em; }
+.review-msg.ok { color: #1e7b34; }
+.review-msg.err { color: #b23b3b; }
+
 /* Voto stelle: solo sulle recensioni lasciate dai visitatori (le testimonianze
    storiche non hanno un voto e restano senza stelle). */
 .testimonial-stars {
