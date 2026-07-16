@@ -124,10 +124,10 @@ async function handleStripePayment() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                // il server usa SOLO id e quantity: nome e prezzo li rilegge dal listino
+                lang: (document.documentElement.lang || 'it').toLowerCase().indexOf('en') === 0 ? 'en' : 'it',
                 items: cart.map(item => ({
                     id: item.id,
-                    name: item.name,
-                    price: item.price,
                     quantity: item.quantity
                 }))
             })
