@@ -102,4 +102,8 @@
         <xhtml:link rel="alternate" hreflang="it" href="https://www.mymindfulmandala.com/it/contatti.html"/>
     </url>
 
+    <!-- Articoli blog (generati dalla dashboard) -->
+    <!-- TD:SITEMAP_POSTS:START -->
+    <!-- TD:SITEMAP_POSTS:END -->
+
 </urlset>
