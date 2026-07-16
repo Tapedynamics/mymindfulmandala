@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "slug": "turchese-vibrante",
+    "name_it": "Mandala Turchese Vibrante",
+    "name_en": "Vibrant Turquoise Mandala",
+    "price": 20
+  },
+  {
+    "id": 2,
+    "slug": "rainbow-explosion",
+    "name_it": "Mandala Rainbow Explosion",
+    "name_en": "Rainbow Explosion Mandala",
+    "price": 20
+  },
+  {
+    "id": 3,
+    "slug": "verde-natura",
+    "name_it": "Mandala Verde Natura",
+    "name_en": "Green Nature Mandala",
+    "price": 20
+  },
+  {
+    "id": 4,
+    "slug": "portachiavi-blue-dots",
+    "name_it": "Portachiavi Blue Dots",
+    "name_en": "Blue Dots Keychain",
+    "price": 10
+  },
+  {
+    "id": 5,
+    "slug": "portachiavi-winter-gold",
+    "name_it": "Portachiavi Winter Gold",
+    "name_en": "Winter Gold Keychain",
+    "price": 10
+  },
+  {
+    "id": 6,
+    "slug": "portachiavi-christmas-gold",
+    "name_it": "Portachiavi Christmas Gold",
+    "name_en": "Christmas Gold Keychain",
+    "price": 10
+  },
+  {
+    "id": 7,
+    "slug": "cuore-blu",
+    "name_it": "Mandala a Cuore Blu",
+    "name_en": "Blue Heart Mandala",
+    "price": 15
+  }
+]
