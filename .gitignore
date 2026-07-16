@@ -3,6 +3,18 @@
 .env.local
 .env.production
 
+# Backend (vive su td-04, NON deve finire nel repo: publish="." lo servirebbe pubblicamente)
+backend/
+
+# Documenti interni TD (non pubblicare: publish="." serve tutto il repo)
+PIANO-DASHBOARD.md
+manifest.md
+LAVORO_*.txt
+SESSIONE_*.txt
+STATO_PROGETTO_*.txt
+sessione_*.txt
+HANDOFF.md
+
 # API Keys & Credentials
 config/credentials.txt
 credentials.txt

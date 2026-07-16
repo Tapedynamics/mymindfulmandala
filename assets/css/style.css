@@ -1427,6 +1427,16 @@ h1, h2, h3, h4 {
     filter: drop-shadow(0 2px 5px rgba(255, 215, 0, 0.5));
 }
 
+/* Voto stelle: solo sulle recensioni lasciate dai visitatori (le testimonianze
+   storiche non hanno un voto e restano senza stelle). */
+.testimonial-stars {
+    color: var(--primary);
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1;
+}
+
 .testimonial-text {
     font-size: 1.05rem;
     color: var(--text-dark);
